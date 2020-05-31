@@ -26,4 +26,5 @@ Route::get('/dashboard', 'DashboardController@index')->name('dashbaord');
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-Route::get('/commodites', 'CommoditesController@index')->name('home');
+
+Route::resource('commodites', 'CommoditesController');

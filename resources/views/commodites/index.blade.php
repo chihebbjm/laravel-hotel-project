@@ -13,37 +13,33 @@
 </div>
 
 
-	<table class="table table-bordered" 
-	style="padding: 40px;margin-right:40px;margin-left:40px">
+
+
+<table class="table table-bordered" 
+style="padding: 40px;margin-right:40px;margin-left:40px">
+	<tr>
+		<th> No </th>
+		<th> nom </th>
+		<th> description </th>
+	</tr>
+	@foreach($commodites as $key => $commodite)
 		<tr>
-			<th> No </th>
-			<th> Name </th>
-			<th> Detail </th>
-			<th> Action </th>
+			<td> {{ ++$i }} </td>
+			<td> {{ $commodite->nom }} </td>
+			<td> {{ $commodite->description }} </td>
+			
 		</tr>
-		@foreach($products as $key => $product)
-			<tr>
-				<td> {{ ++$i }} </td>
-				<td> {{ $product->name }} </td>
-				<td> {{ $product->detail }} </td>
-				<td>
-					<form action="{{ route('products.destroy', $product->id) }}" method="POST">
-						<a class="btn btn-info" href="{{ route('products.show', $product->id) }}">Show</a>
-						<a class="btn btn-primary" href="{{ route('products.edit', $product->id) }}">Edit</a>
-						@csrf
-						@method('DELETE')
-						<button type="submit" class="btn btn-danger">Delete</button>
-					</form>
-				</td>
-			</tr>
-		@endforeach
-	</table>
+	@endforeach
+</table>
+
+
+
 
 	<div class="row" style="margin-left:10px">
 		<div class="col-md-8">
 
 			<div class="pull-left" style="margin-left: 20px">
-				<a class="btn btn-success" data-toggle="modal" data-target="#exampleModal"> Create New Product</a>
+				<a class="btn btn-success" data-toggle="modal" data-target="#exampleModal"> Create New Commodites</a>
 			</div>
 		</div>
 	</div>
@@ -57,7 +53,7 @@
 	  <div class="modal-content">
 		<div class="modal-header">
 		  <h5 class="modal-title" id="exampleModalLabel">
-			  <h3> Add New Product </h3>
+			  <h3> Add New Commodites </h3>
 			</h5>
 		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 			<span aria-hidden="true">&times;</span>
@@ -77,29 +73,53 @@
 				</div>
 			@endif
 		
-			<form action="{{ route('products.store') }}" method="POST">
+
+
+
+
+
+			<form action="{{ route('commodites.store') }}" method="POST">
 				@csrf
 				<div class="row">
 					<div class="col-lg-12">
 						<div class="form-group">
-							<strong>Name:</strong>
-							<input type="text" name="name" class="form-control" placeholder="Name">
+							<strong>nom:</strong>
+							<input type="text" name="nom" class="form-control" placeholder="nom">
 						</div>
 					</div>
 		
 					<div class="col-lg-12">
 						<div class="form-group">
-							<strong>Detail:</strong>
-							<textarea name="detail" placeholder="Detail" class="form-control"></textarea>
+							<strong>description</strong>
+							<textarea name="description" placeholder="description" class="form-control"></textarea>
 						</div>
 					</div>
 		
+					<div class="col-lg-12">
+						<div class="form-group">
+							
+							<label class="radio-inline"><input type="radio" name="icon" checked value="https://image.flaticon.com/icons/svg/902/902808.svg">
+								<img width="24" height="24" src="https://image.flaticon.com/icons/svg/902/902808.svg" class="loaded">
+							</label>
+							<label class="radio-inline"><input type="radio" name="icon" value="https://image.flaticon.com/icons/svg/82/82490.svg">
+								<img width="24" height="24" src="https://image.flaticon.com/icons/svg/82/82490.svg" class="loaded">
+							
+							</label>
+							<label class="radio-inline"><input type="radio" name="icon" value="https://image.flaticon.com/icons/svg/2905/2905562.svg">
+								<img width="24" height="24" src="https://image.flaticon.com/icons/svg/2905/2905562.svg" class="loaded">	
+							
+							</label>
+						</div>
+					</div>
+
 					<div class="col-lg-12">
 						
 						<button type="submit" class="btn btn-primary">Submit</button>
 					</div>
 				</div>
 			</form>
+
+
 
 
 
