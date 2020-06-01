@@ -18,15 +18,28 @@
 <table class="table table-bordered" 
 style="padding: 40px;margin-right:40px;margin-left:40px">
 	<tr>
+		<th>Icon</th>
 		<th> No </th>
 		<th> nom </th>
 		<th> description </th>
+		
 	</tr>
 	@foreach($commodites as $key => $commodite)
 		<tr>
+			<td>
+				<img width="24" height="24" src="/images/{{ $commodite->icon }}" class="loaded" alt="icon" >
+			</td>
 			<td> {{ ++$i }} </td>
 			<td> {{ $commodite->nom }} </td>
 			<td> {{ $commodite->description }} </td>
+			<td>
+				<form action="{{ route('commodites.destroy', $commodite->id) }}" method="POST">
+					<a class="btn btn-primary" href="{{ route('commodites.edit', $commodite->id) }}">Edit</a>
+					@csrf
+					@method('DELETE')
+					<button type="submit" class="btn btn-danger">Delete</button>
+				</form>
+			</td>
 			
 		</tr>
 	@endforeach
@@ -98,15 +111,15 @@ style="padding: 40px;margin-right:40px;margin-left:40px">
 					<div class="col-lg-12">
 						<div class="form-group">
 							
-							<label class="radio-inline"><input type="radio" name="icon" checked value="https://image.flaticon.com/icons/svg/902/902808.svg">
-								<img width="24" height="24" src="https://image.flaticon.com/icons/svg/902/902808.svg" class="loaded">
+							<label class="radio-inline"><input type="radio" name="icon" checked value="wifi.png">
+								<img width="24" height="24" src="{{asset('/images/wifi.png')}}"" class="loaded">
 							</label>
-							<label class="radio-inline"><input type="radio" name="icon" value="https://image.flaticon.com/icons/svg/82/82490.svg">
-								<img width="24" height="24" src="https://image.flaticon.com/icons/svg/82/82490.svg" class="loaded">
-							
+							<label class="radio-inline"><input type="radio" name="icon" value="balcon.png">
+								<img width="24" height="24" src="{{asset('/images/balcon.png')}}" class="loaded">
+								
 							</label>
-							<label class="radio-inline"><input type="radio" name="icon" value="https://image.flaticon.com/icons/svg/2905/2905562.svg">
-								<img width="24" height="24" src="https://image.flaticon.com/icons/svg/2905/2905562.svg" class="loaded">	
+							<label class="radio-inline"><input type="radio" name="icon" value="climatisation.png">
+							<img width="24" height="24" src="{{asset('/images/climatisation.png')}}" class="loaded">	
 							
 							</label>
 						</div>

@@ -96,8 +96,9 @@ class CommoditesController extends Controller
     public function update(Request $request, Commodites $commodite)
     {
         $request->validate([
-            'name' => 'required',
-            'detail' => 'required'
+            'nom' => 'required',
+            'description' => 'required',
+          
         ]);
 
         $commodite->update($request->all());
@@ -121,5 +122,5 @@ class CommoditesController extends Controller
     }
 
 
-    
+
 }

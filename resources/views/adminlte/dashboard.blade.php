@@ -188,7 +188,7 @@ desired effect
         </li>
 
 
-        <li class="active"><a href="{{ url('/products') }}"><i class="fa fa-link"></i> <span>Gérer les chambres</span></a></li>
+        <li class="active"><a href="#"></i> <span>Gérer les chambres</span></a></li>
         <li><a href="#"><i class="fa fa-link"></i> <span>Gérer les slider</span></a></li>
         <li><a href="#"><i class="fa fa-link"></i> <span>Gérer la galerie</span></a></li>
         <li><a href="#"><i class="fa fa-link"></i> <span>Consulter les messages</span></a></li>
