@@ -34,4 +34,5 @@ class CreateChambresCommoditesTable extends Migration
     {
         Schema::dropIfExists('chambres_commodites');
     }
+
 }

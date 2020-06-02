@@ -123,7 +123,7 @@ style="padding: 40px;margin-right:40px;margin-left:40px;
 		
 				
 					<div class="form-group">
-						<label class="col-md-4 text-right">Select Image</label>
+						<label class="col-md-4">Select Image</label>
 						<div class="col-md-8">
 							<input type="file" name="image" />
 						</div>
@@ -136,10 +136,28 @@ style="padding: 40px;margin-right:40px;margin-left:40px;
 						</div>
 					</div>
 
-						
+
+					<div class="col-md-12">
+					<div class="form-group">
+
+					@foreach($commodites as $key => $commodite)
+					<div class="radio-inline">	
+						<label class="radio-inline"><input type="radio" name="commodites_icon"  value="{{$commodite->id}}">
+							<img width="24" height="24" src="/images/{{ $commodite->icon }}" class="loaded">
+							</label>
+						<label>	{{$commodite->nom}}</label>	
+					</div>
+					@endforeach
+
+					</div>
+					</div>
+
+					<div class="col-lg-12">
 						<button type="submit" class="btn btn-primary">Submit</button>
 					</div>
-				</div>
+				
+
+
 			</form>
 
 

@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Chambres;
+use App\Chambres_Commodites;
+use App\Commodites;
+
 use Illuminate\Http\Request;
 
 class ChambresController extends Controller
@@ -30,7 +33,9 @@ class ChambresController extends Controller
    public function index()
    {
        $chambres = Chambres::latest()->paginate(5);
-       return view('chambres.index', compact('chambres'))->with('i', (request()->input('page', 1) - 1) * 5);
+       $commodites = Commodites::latest()->paginate(5);
+
+       return view('chambres.index', compact('chambres'),compact('commodites'))->with('i', (request()->input('page', 1) - 1) * 5);
    }
 
 
@@ -72,10 +77,25 @@ class ChambresController extends Controller
             'image'            =>   $new_name
         );
 
-        Chambres::create($form_data);
-  
-         //Chambres::insert($request->all());
-     
+        $new_chambres=Chambres::create($form_data);
+       
+
+
+
+        //get the ID of the chambres  ==>  $new_chambres->id
+        //get the ID of the icon slected :
+        // USING => <label class="radio-inline"><input type="radio" name="icon"  value="{{$commodite->id}}">
+        $request->validate([
+            'commodites_icon' =>'required'
+        ]);
+        
+        $form_chambres_commodites= array(
+            'chambres_id' =>$new_chambres->id,
+            'commodites_id'=>$request->commodites_icon
+        );
+        Chambres_Commodites::create($form_chambres_commodites);
+        
+
 
         return redirect()->route('chambres.index')
                             ->with('success', 'chambres Created Successfully!');

@@ -63,7 +63,7 @@ class CommoditesController extends Controller
     }
 
     
-
+    
     /**
      * Display the specified resource.
      *
