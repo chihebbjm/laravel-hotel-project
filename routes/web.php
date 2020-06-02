@@ -28,3 +28,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 Route::resource('commodites', 'CommoditesController');
+
+
+Route::resource('chambres', 'ChambresController');

@@ -187,8 +187,19 @@ desired effect
           </ul>
         </li>
 
+        <li class="treeview">
+          <a href="#"><i class="fa fa-link"></i> <span>Gérer les chambres</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{ url('/chambres') }}">List chambres</a></li>
+          </ul>
+        </li>
 
-        <li class="active"><a href="#"></i> <span>Gérer les chambres</span></a></li>
+
+        
         <li><a href="#"><i class="fa fa-link"></i> <span>Gérer les slider</span></a></li>
         <li><a href="#"><i class="fa fa-link"></i> <span>Gérer la galerie</span></a></li>
         <li><a href="#"><i class="fa fa-link"></i> <span>Consulter les messages</span></a></li>

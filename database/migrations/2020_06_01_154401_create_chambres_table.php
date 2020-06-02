@@ -17,8 +17,8 @@ class CreateChambresTable extends Migration
         Schema::create('chambres', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nom');
-            $table->text('description');
-            $table->text('image');
+            $table->string('description');
+            $table->string('image');
             $table->integer('prix_pax');
             $table->timestamps();
         });

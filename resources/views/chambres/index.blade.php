@@ -15,26 +15,39 @@
 
 
 
-<table class="table table-bordered" 
-style="padding: 40px;margin-right:40px;margin-left:40px">
+<table class="table table-bordered"   
+style="padding: 40px;margin-right:40px;margin-left:40px;
+">
+
 <tr class="table-danger">
-		<th>Icon</th>
+		<th>Image</th>
 		<th> No </th>
 		<th> nom </th>
 		<th> description </th>
-		<th> action </th>
+		<th> prix_pax </th>
+		<th> Action </th>
 	</tr>
-	@foreach($commodites as $key => $commodite)
+	@foreach($chambres as $key => $chambre)
 	<tr class="table-light">
 			<td>
-				<img width="24" height="24" src="/images/{{ $commodite->icon }}" class="loaded" alt="icon" >
+				<img width="100" height="100" src="/images/{{ $chambre->image }}" class="loaded" alt="icon" >
 			</td>
-			<td> {{ ++$i }} </td>
-			<td> {{ $commodite->nom }} </td>
-			<td> {{ $commodite->description }} </td>
-			<td>
-				<form action="{{ route('commodites.destroy', $commodite->id) }}" method="POST">
-					<a class="btn btn-primary" href="{{ route('commodites.edit', $commodite->id) }}">Edit</a>
+			<td style="text-align: center; vertical-align: middle;" > 
+				{{ ++$i }} 
+			</td>
+			<td style="text-align: center; vertical-align: middle;" > 
+				{{ $chambre->nom }} 
+			</td>
+			<td style="text-align: center; vertical-align: middle;" > 
+				 {{ $chambre->description }} 
+			</td>
+			<td style="text-align: center; vertical-align: middle;" > 
+				 {{ $chambre->prix_pax }} 
+			</td>
+
+			<td style="text-align: center; vertical-align: middle;" > 
+				<form action="{{ route('chambres.destroy', $chambre->id) }}" method="POST">
+					<a class="btn btn-primary" href="{{ route('chambres.edit', $chambre->id) }}">Edit</a>
 					@csrf
 					@method('DELETE')
 					<button type="submit" class="btn btn-danger">Delete</button>
@@ -52,7 +65,7 @@ style="padding: 40px;margin-right:40px;margin-left:40px">
 		<div class="col-md-8">
 
 			<div class="pull-left" style="margin-left: 20px">
-				<a class="btn btn-success" data-toggle="modal" data-target="#exampleModal"> Create New Commodites</a>
+				<a class="btn btn-success" data-toggle="modal" data-target="#exampleModal"> Create Chambres</a>
 			</div>
 		</div>
 	</div>
@@ -91,7 +104,7 @@ style="padding: 40px;margin-right:40px;margin-left:40px">
 
 
 
-			<form action="{{ route('commodites.store') }}" method="POST">
+			<form action="{{ route('chambres.store') }}" method="POST" enctype="multipart/form-data">
 				@csrf
 				<div class="row">
 					<div class="col-lg-12">
@@ -108,24 +121,21 @@ style="padding: 40px;margin-right:40px;margin-left:40px">
 						</div>
 					</div>
 		
-					<div class="col-lg-12">
-						<div class="form-group">
-							
-							<label class="radio-inline"><input type="radio" name="icon" checked value="wifi.png">
-								<img width="24" height="24" src="{{asset('/images/wifi.png')}}"" class="loaded">
-							</label>
-							<label class="radio-inline"><input type="radio" name="icon" value="balcon.png">
-								<img width="24" height="24" src="{{asset('/images/balcon.png')}}" class="loaded">
-								
-							</label>
-							<label class="radio-inline"><input type="radio" name="icon" value="climatisation.png">
-							<img width="24" height="24" src="{{asset('/images/climatisation.png')}}" class="loaded">	
-							
-							</label>
+				
+					<div class="form-group">
+						<label class="col-md-4 text-right">Select Image</label>
+						<div class="col-md-8">
+							<input type="file" name="image" />
 						</div>
 					</div>
 
-					<div class="col-lg-12">
+					<div class="col-md-12">
+						<div class="form-group">
+							<strong>prix_pax :</strong>
+							<textarea name="prix_pax" placeholder="prix_pax" class="form-control"></textarea>
+						</div>
+					</div>
+
 						
 						<button type="submit" class="btn btn-primary">Submit</button>
 					</div>
