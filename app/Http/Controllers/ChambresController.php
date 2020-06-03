@@ -34,8 +34,7 @@ class ChambresController extends Controller
    {
        $chambres = Chambres::latest()->paginate(5);
        $commodites = Commodites::latest()->paginate(5);
-
-       return view('chambres.index', compact('chambres'),compact('commodites'))->with('i', (request()->input('page', 1) - 1) * 5);
+       return view('chambres.index', compact('chambres','commodites'))->with('i', (request()->input('page', 1) - 1) * 5);
    }
 
 
@@ -59,6 +58,7 @@ class ChambresController extends Controller
      */
     public function store(Request $request)
     {
+        //dd($request);
         $request->validate([
             'nom' => 'required',
             'description' => 'required',
@@ -70,31 +70,18 @@ class ChambresController extends Controller
 
         $new_name = rand() . '.' . $image->getClientOriginalExtension();
         $image->move(public_path('images'), $new_name);
-        $form_data = array(
-            'nom'       =>   $request->nom,
-            'description'        =>   $request->description,
-            'prix_pax'        =>   $request->prix_pax,
-            'image'            =>   $new_name
-        );
 
-        $new_chambres=Chambres::create($form_data);
-       
-
-
-
-        //get the ID of the chambres  ==>  $new_chambres->id
-        //get the ID of the icon slected :
-        // USING => <label class="radio-inline"><input type="radio" name="icon"  value="{{$commodite->id}}">
-        $request->validate([
-            'commodites_icon' =>'required'
-        ]);
+        //NEW
+        $chambre=new Chambres;
+        $chambre->nom=$request->nom;
+        $chambre->description=$request->description;
+        $chambre->prix_pax=$request->prix_pax;
+        $chambre->image=$new_name;
+        $chambre->save();
         
-        $form_chambres_commodites= array(
-            'chambres_id' =>$new_chambres->id,
-            'commodites_id'=>$request->commodites_icon
-        );
-        Chambres_Commodites::create($form_chambres_commodites);
-        
+        //$chambre->commodites is the name of the function calling function here :
+        //@foreach ($chambre->commodites as $one_commodites)
+        $chambre->commodites()->sync($request->commodites_icon,false);
 
 
         return redirect()->route('chambres.index')
@@ -123,7 +110,8 @@ class ChambresController extends Controller
      */
     public function edit(Chambres $chambre)
     {
-        return view('chambres.edit', compact('chambre'));
+        $commodites = Commodites::latest()->paginate(5);
+        return view('chambres.edit', compact('chambre','commodites'));
     }
 
 
@@ -173,7 +161,7 @@ class ChambresController extends Controller
         }
 
 
-
+        /*
         $form_data = array(
             'nom'    =>  $request->nom,
             'description'     =>  $request->description,
@@ -184,6 +172,16 @@ class ChambresController extends Controller
 
         $chambre->update($form_data);
 
+        */
+
+        //UPDATE :
+        $chambre->nom=$request->nom;
+        $chambre->description=$request->description;
+        $chambre->prix_pax=$request->prix_pax;
+        $chambre->image=$image_name;
+        $chambre->update();
+        $chambre->commodites()->sync($request->commodites_icon,true);
+        
         return redirect()->route('chambres.index')
                             ->with('success', 'Commodites Updated Successfully!');
     }

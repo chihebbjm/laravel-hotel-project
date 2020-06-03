@@ -21,7 +21,7 @@ class CreateChambresCommoditesTable extends Migration
             $table->integer('commodites_id')->unsigned();
             //$table->foreign('commodites_id')->references('id')->on('commodites');
 
-            $table->timestamps();
+          
         });
     }
 

@@ -25,8 +25,8 @@ style="padding: 40px;margin-right:40px;margin-left:40px;
 		<th> nom </th>
 		<th> description </th>
 		<th> prix_pax </th>
-		<th> commodites</th>
-		<th> action </th>
+		<th> List of commodites </th>
+		<th> Action </th>
 	</tr>
 	@foreach($chambres as $key => $chambre)
 	<tr class="table-light">
@@ -45,17 +45,8 @@ style="padding: 40px;margin-right:40px;margin-left:40px;
 			<td style="text-align: center; vertical-align: middle;" > 
 				 {{ $chambre->prix_pax }} 
 			</td>
-			<td style="text-align: center; vertical-align: middle;">
-			
-				<div class="row">
-					@foreach ($chambre->commodites as $one_commodites)
-					<div class="col-md-2">
-						<img width="24" height="24" src="/images/{{ $one_commodites->icon }}" class="loaded">
-						<label class="label label-default">{{ $one_commodites->nom }}</label>
-					</div>
-					@endforeach
-				</div>
-			
+			<td>
+				<label> List of commodites that relatied to this chambres ID </label>
 			</td>
 			<td style="text-align: center; vertical-align: middle;" > 
 				<form action="{{ route('chambres.destroy', $chambre->id) }}" method="POST">
@@ -119,14 +110,14 @@ style="padding: 40px;margin-right:40px;margin-left:40px;
 			<form action="{{ route('chambres.store') }}" method="POST" enctype="multipart/form-data">
 				@csrf
 				<div class="row">
-					<div class="col-lg-12" style="margin-bottom: 20px">
+					<div class="col-lg-12">
 						<div class="form-group">
 							<strong>nom:</strong>
 							<input type="text" name="nom" class="form-control" placeholder="nom">
 						</div>
 					</div>
 		
-					<div class="col-lg-12" style="margin-bottom: 20px">
+					<div class="col-lg-12">
 						<div class="form-group">
 							<strong>description</strong>
 							<textarea name="description" placeholder="description" class="form-control"></textarea>
@@ -134,14 +125,14 @@ style="padding: 40px;margin-right:40px;margin-left:40px;
 					</div>
 		
 				
-					<div class="col-md-8" style="margin-bottom: 20px">
-						<div class="form-group">
-							<label style="margin-bottom: 20px">Select Image</label>
+					<div class="form-group">
+						<label class="col-md-4">Select Image</label>
+						<div class="col-md-8">
 							<input type="file" name="image" />
 						</div>
 					</div>
 
-					<div class="col-md-12" style="margin-bottom: 20px">
+					<div class="col-md-12">
 						<div class="form-group">
 							<strong>prix_pax :</strong>
 							<textarea name="prix_pax" placeholder="prix_pax" class="form-control"></textarea>
@@ -149,17 +140,9 @@ style="padding: 40px;margin-right:40px;margin-left:40px;
 					</div>
 
 
-					<div class="col-md-12" style="margin-bottom: 20px">
+					<div class="col-md-12">
 					<div class="form-group">
 
-					@foreach($commodites as $key => $commodite)
-					<div class="form-check form-check-inline">	
-						<label class="radio-inline"><input class="form-check-input" type="checkbox" name="commodites_icon[]"  value="{{$commodite->id}}">
-							<img width="24" height="24" src="/images/{{ $commodite->icon }}" class="loaded">
-							</label>
-						<label>	{{$commodite->nom}}</label>	
-					</div>
-					@endforeach
 
 					</div>
 					</div>
