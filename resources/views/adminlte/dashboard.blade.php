@@ -200,8 +200,18 @@ desired effect
         </li>
 
     
+        <li class="treeview">
+          <a href="#"><i class="fa fa-link"></i> <span>Gérer les slider</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{ url('/sliders') }}">List Image Slider </a></li>
+          </ul>
+        </li>
+
         
-        <li><a href="#"><i class="fa fa-link"></i> <span>Gérer les slider</span></a></li>
         <li><a href="#"><i class="fa fa-link"></i> <span>Gérer la galerie</span></a></li>
         <li><a href="#"><i class="fa fa-link"></i> <span>Consulter es réservation</span></a></li>
         <li><a href="#"><i class="fa fa-link"></i> <span>Consulter les messages</span></a></li>
