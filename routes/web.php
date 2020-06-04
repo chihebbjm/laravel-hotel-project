@@ -33,4 +33,3 @@ Route::resource('commodites', 'CommoditesController');
 Route::resource('chambres', 'ChambresController');
 
 
-Route::resource('chambres_commodites', 'ChambresCommoditesController');

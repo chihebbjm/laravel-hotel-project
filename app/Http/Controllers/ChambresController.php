@@ -148,9 +148,6 @@ class ChambresController extends Controller
         }
 
 
-
-
-
         else
         {
             $request->validate([
@@ -159,20 +156,6 @@ class ChambresController extends Controller
                 'prix_pax'=>'required'
             ]);
         }
-
-
-        /*
-        $form_data = array(
-            'nom'    =>  $request->nom,
-            'description'     =>  $request->description,
-            'prix_pax'     =>  $request->prix_pax,
-            'image'         =>  $image_name
-        );
-
-
-        $chambre->update($form_data);
-
-        */
 
         //UPDATE :
         $chambre->nom=$request->nom;
@@ -194,8 +177,10 @@ class ChambresController extends Controller
      */
     public function destroy( Chambres $chambre)
     {
+        //delet from the chambre table 
         $chambre->delete();
-
+        //delete from the chambre_commodites table :
+        $chambre->commodites()->detach();
         return redirect()->route('chambres.index')
                             ->with('success', 'Commodites Deleted Successfully!');
     }

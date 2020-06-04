@@ -187,6 +187,7 @@ desired effect
           </ul>
         </li>
 
+        
         <li class="treeview">
           <a href="#"><i class="fa fa-link"></i> <span>Gérer les chambres</span>
             <span class="pull-right-container">
@@ -198,32 +199,23 @@ desired effect
           </ul>
         </li>
 
-        <li class="treeview">
-          <a href="#"><i class="fa fa-link"></i> <span>Gérer chambres-commodites</span>
-            <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-              </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="{{ url('/chambres_commodites') }}">List chambres</a></li>
-          </ul>
-        </li>
-
+    
         
         <li><a href="#"><i class="fa fa-link"></i> <span>Gérer les slider</span></a></li>
         <li><a href="#"><i class="fa fa-link"></i> <span>Gérer la galerie</span></a></li>
+        <li><a href="#"><i class="fa fa-link"></i> <span>Consulter es réservation</span></a></li>
         <li><a href="#"><i class="fa fa-link"></i> <span>Consulter les messages</span></a></li>
         <li><a href="#"><i class="fa fa-link"></i> <span>Autre</span></a></li>
 
 
         <li class="treeview">
-          <a href="#"><i class="fa fa-link"></i> <span>Gérer les chambres</span>
+          <a href="#"><i class="fa fa-link"></i> <span>Gérer les Produit</span>
             <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{ url('/products') }}">List des chambres</a></li>
+            <li><a href="{{ url('/products') }}">Demo exemple </a></li>
           </ul>
         </li>
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Commodites;
+use App\Chambres;
 use Illuminate\Http\Request;
 
 class CommoditesController extends Controller
@@ -115,6 +116,7 @@ class CommoditesController extends Controller
      */
     public function destroy(Commodites $commodite)
     {
+        $commodite->chambres()->detach();
         $commodite->delete();
 
         return redirect()->route('commodites.index')
