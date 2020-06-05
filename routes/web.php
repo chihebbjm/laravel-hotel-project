@@ -35,3 +35,5 @@ Route::resource('chambres', 'ChambresController');
 
 Route::resource('slider', 'SliderController');
 
+
+Route::resource('galerie', 'GalerieController');

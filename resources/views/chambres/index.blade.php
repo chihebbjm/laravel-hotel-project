@@ -19,7 +19,7 @@
 style="padding: 40px;margin-right:40px;margin-left:40px;
 ">
 
-<tr class="table-danger">
+<tr class="table-info">
 		<th>Image</th>
 		<th> No </th>
 		<th> nom </th>

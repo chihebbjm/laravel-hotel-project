@@ -15,24 +15,26 @@
 
 	<table class="table table-bordered" 
 	style="padding: 40px;margin-right:40px;margin-left:40px">
-	<tr class="table-success">
+		<tr class="table-dark">
 			<th>Image</th>
 			<th> No </th>
 			<th> Titre </th>
-			<th> Description </th>
+			<th> Region </th>
 			<th> Action </th>
 		</tr>
-		@foreach($sliders as $key => $slide)
+		@foreach($galeries as $key => $img)
 		<tr class="table-light">
+
 				<td>
-				<img width="100" height="100" src="/images/{{ $slide->image }}" class="loaded" alt="icon" >
+				<img width="100" height="100" src="/images/{{ $img->image }}" class="loaded" alt="icon" >
 				</td>
 				<td> {{ ++$i }} </td>
-				<td> {{ $slide->titre }} </td>
-				<td> {{ $slide->description }} </td>
+				<td> {{ $img->titre }} </td>
+				<td> {{ $img->tag }} </td>
+
 				<td>
-					<form action="{{ route('slider.destroy', $slide->id) }}" method="POST">
-						<a class="btn btn-primary" href="{{ route('slider.edit', $slide->id) }}">Edit</a>
+					<form action="{{ route('galerie.destroy', $img->id) }}" method="POST">
+						<a class="btn btn-primary" href="{{ route('galerie.edit', $img->id) }}">Edit</a>
 						@csrf
 						@method('DELETE')
 						<button type="submit" class="btn btn-danger">Delete</button>
@@ -60,7 +62,7 @@
 	  <div class="modal-content">
 		<div class="modal-header">
 		  <h5 class="modal-title" id="exampleModalLabel">
-			  <h3> Add New Product </h3>
+			  <h3> Add New Image to galerie </h3>
 			</h5>
 		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 			<span aria-hidden="true">&times;</span>
@@ -80,7 +82,7 @@
 				</div>
 			@endif
 		
-			<form action="{{ route('slider.store') }}" method="POST" enctype="multipart/form-data" >
+			<form action="{{ route('galerie.store') }}" method="POST" enctype="multipart/form-data" >
 				@csrf
 				<div class="row">
 					<div class="col-lg-12" style="margin-bottom: 20px">
@@ -92,8 +94,13 @@
 		
 					<div class="col-lg-12" style="margin-bottom: 20px">
 						<div class="form-group">
-							<strong>Description:</strong>
-							<textarea name="description" placeholder="description" class="form-control"></textarea>
+							<strong>Region:</strong>
+							<select name="tag" id="pet-select">
+								<option value="sousse">Sousse</option>
+								<option value="djerba">Djerba</option>
+								<option value="tozeur">Tozeur</option>
+								<option value="hammamet">Hammamet</option>
+							</select>
 						</div>
 					</div>
 		
@@ -117,71 +124,6 @@
   </div>
 
 
-
-
-
-  
-	<!-- Modal -->
-<div class="modal fade" id="editmodel" tabindex="-1" role="dialog" aria-labelledby="editmodel" aria-hidden="true">
-	<div class="modal-dialog" role="document">
-	  <div class="modal-content">
-		<div class="modal-header">
-		  <h5 class="modal-title" id="exampleModalLabel">
-			  <h3> Add New Product </h3>
-			</h5>
-		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-			<span aria-hidden="true">&times;</span>
-		  </button>
-		</div>
-		<div class="modal-body">
-		  
-		
-			@if($errors->any())
-				<div class="alert alert-danger">
-					<strong>Oopps! </strong> Something went wrong.
-					<ul>
-						@foreach($errors->all() as $error)
-							<li> {{ $error }} </li>
-						@endforeach
-					</ul>
-				</div>
-			@endif
-		
-			<form action="{{ route('slider.store') }}" method="POST" enctype="multipart/form-data" >
-				@csrf
-				<div class="row">
-					<div class="col-lg-12" style="margin-bottom: 20px">
-						<div class="form-group">
-							<strong>Titre:</strong>
-							<input type="text" name="titre" class="form-control" placeholder="titre">
-						</div>
-					</div>
-		
-					<div class="col-lg-12" style="margin-bottom: 20px">
-						<div class="form-group">
-							<strong>Description:</strong>
-							<textarea name="description" placeholder="description" class="form-control"></textarea>
-						</div>
-					</div>
-		
-					<div class="col-md-8" style="margin-bottom: 20px">
-						<div class="form-group">
-							<label style="margin-bottom: 20px">Select Image</label>
-							<input type="file" name="image" />
-						</div>
-					</div>
-					<div class="col-lg-12">
-						
-						<button type="submit" class="btn btn-primary">Submit</button>
-					</div>
-				</div>
-			</form>
-
-
-
-	  </div>
-	</div>
-  </div>
 
 
 
