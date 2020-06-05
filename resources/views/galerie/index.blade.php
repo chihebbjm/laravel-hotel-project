@@ -110,6 +110,13 @@
 							<input type="file" name="image" />
 						</div>
 					</div>
+
+					<div class="col-md-8">
+						<div class="form-group">
+							<label style="margin-bottom: 20px">Select Image</label>
+							<input type="date" name="date" />
+						</div>
+					</div>
 					<div class="col-lg-12">
 						
 						<button type="submit" class="btn btn-primary">Submit</button>

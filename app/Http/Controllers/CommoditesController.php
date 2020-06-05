@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Commodites;
 use App\Chambres;
+use App\Chambres_Commodites;
 use Illuminate\Http\Request;
 
 class CommoditesController extends Controller
@@ -26,6 +27,7 @@ class CommoditesController extends Controller
      */
     public function index()
     {
+      
         $commodites = Commodites::latest()->paginate(5);
         return view('commodites.index', compact('commodites'))->with('i', (request()->input('page', 1) - 1) * 5);
     
@@ -116,11 +118,19 @@ class CommoditesController extends Controller
      */
     public function destroy(Commodites $commodite)
     {
-        $commodite->chambres()->detach();
-        $commodite->delete();
 
-        return redirect()->route('commodites.index')
+        //where condition  
+        $chambres_commodites = Chambres_Commodites::where('commodites_id',$commodite->id)->count();
+        if ($chambres_commodites==0){
+            $commodite->delete();
+            return redirect()->route('commodites.index')
                             ->with('success', 'Commodites Deleted Successfully!');
+        }else{
+            return redirect()->route('commodites.index')
+            ->with('success', 'Can not be Commodites Deleted !');
+        }
+
+        
     }
 
 

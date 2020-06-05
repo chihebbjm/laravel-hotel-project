@@ -31,11 +31,13 @@ class ChambresController extends Controller
     * @return \Illuminate\Http\Response
     */
    public function index()
-   {
+    {
+     
        $chambres = Chambres::latest()->paginate(5);
        $commodites = Commodites::latest()->paginate(5);
        return view('chambres.index', compact('chambres','commodites'))->with('i', (request()->input('page', 1) - 1) * 5);
-   }
+  
+    }
 
 
 
@@ -62,7 +64,7 @@ class ChambresController extends Controller
         $request->validate([
             'nom' => 'required',
             'description' => 'required',
-            'image' =>'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' =>'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'prix_pax'=>'required'
         ]);
 
@@ -140,7 +142,7 @@ class ChambresController extends Controller
         $request->validate([
             'nom' => 'required',
             'description' => 'required',
-            'image' =>'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' =>'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'prix_pax'=>'required'
         ]);
         $image_name = rand() . '.' . $image->getClientOriginalExtension();

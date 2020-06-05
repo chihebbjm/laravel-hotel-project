@@ -48,11 +48,14 @@ style="padding: 40px;margin-right:40px;margin-left:40px;
 			<td style="text-align: center; vertical-align: middle;">
 			
 				<div class="row">
+					
 					@foreach ($chambre->commodites as $one_commodites)
-					<div class="col-md-2">
-						<img width="24" height="24" src="/images/{{ $one_commodites->icon }}" class="loaded">
-						<label class="label label-default">{{ $one_commodites->nom }}</label>
-					</div>
+						
+							<div class="col-md-2">
+								<img width="24" height="24" src="/images/{{ $one_commodites->icon }}" class="loaded">
+								<label class="label label-default">{{ $one_commodites->nom }}</label>
+							</div>
+					
 					@endforeach
 				</div>
 			
