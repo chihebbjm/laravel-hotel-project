@@ -46,3 +46,14 @@ Route::get('/contact-admin', 'ContactAdminController@index')->name('contact-admi
 Route::resource('contact', 'ContactClientController');
 //Route::get('/contact', 'ContactClientController@create')->name('contact');
 
+
+
+//contact for admin (ContactAdminController) ==> auth
+Route::get('reservation-admin', 'ReservationAdminController@index')->name('reservation-admin');
+
+//contact for clinet (ContactClientController)
+Route::resource('reservation', 'ReservationClientController');
+
+
+
+

@@ -13,17 +13,17 @@
 	
 		<th> No </th>
 		<th> nom </th>
-		<th> email </th>
-		<th> message </th>
+		<th> prenom </th>
+		<th> telephone </th>
 
 	</tr>
-	@foreach($contact as $key => $info)
+	@foreach($reservation as $key => $info)
 	<tr class="table-light">
 			
 			<td> {{ ++$i }} </td>
 			<td> {{ $info->nom }} </td>
-			<td> {{ $info->email }} </td>
-			<td> {{ $info->message }} </td>
+			<td> {{ $info->prenom }} </td>
+			<td> {{ $info->telephone }} </td>
 			
 			
 		</tr>

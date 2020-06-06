@@ -113,15 +113,18 @@ desired effect
                 </p>
               </li>
               <!-- Menu Body -->
-              <li class="user-body">
+              <li class="user-body text-center">
                 <div class="row">
-                  <div class="col-xs text-center">
+                 
+                  <div class="col-12 text-center">
 
-                    <a href="{{ route('logout') }}"
+                    <button class="btn btn-danger" href="{{ route('logout') }}"
                     onclick="event.preventDefault();
                              document.getElementById('logout-form').submit();">
-                    Logout
-                </a>
+                    <i class="fa fa-sign-out" aria-hidden="true">
+                      Logout
+                    </i>               
+                    </button>
 
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     {{ csrf_field() }}
@@ -229,7 +232,7 @@ desired effect
         </li>
 
 
-        <li><a href="#"><i class="fa fa-list-alt"></i> <span>Consulter es réservation</span></a></li>
+        <li><a href="{{ url('/reservation-admin')}}"><i class="fa fa-list-alt"></i> <span>Consulter es réservation</span></a></li>
         <li><a href="{{ url('/contact-admin')}}"><i class="fa fa-comments"></i> <span>Consulter les messages</span></a></li>
         <li><a href="#"><i class="fa fa-wrench"></i> <span>Autre</span></a></li>
 
