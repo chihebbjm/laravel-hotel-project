@@ -113,17 +113,17 @@ desired effect
                 </p>
               </li>
               <!-- Menu Body -->
-              <li class="user-body text-center">
+              <li class="user-body">
                 <div class="row">
-                 
-                  <div class="col-12 text-center">
+                  <div class="col-xs text-center">
 
-                    <button class="btn btn-danger" href="{{ route('logout') }}"
+                    <button href="{{ route('logout') }}"
                     onclick="event.preventDefault();
                              document.getElementById('logout-form').submit();">
                     <i class="fa fa-sign-out" aria-hidden="true">
                       Logout
-                    </i>               
+                    </i>
+                                      
                     </button>
 
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
