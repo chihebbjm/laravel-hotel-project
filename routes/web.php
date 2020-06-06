@@ -40,5 +40,9 @@ Route::resource('galerie', 'GalerieController');
 
 
 //contact for admin (ContactAdminController) ==> auth
+Route::get('/contact-admin', 'ContactAdminController@index')->name('contact-admin');
 
 //contact for clinet (ContactClientController)
+Route::resource('contact', 'ContactClientController');
+//Route::get('/contact', 'ContactClientController@create')->name('contact');
+

@@ -230,7 +230,7 @@ desired effect
 
 
         <li><a href="#"><i class="fa fa-list-alt"></i> <span>Consulter es réservation</span></a></li>
-        <li><a href="#"><i class="fa fa-comments"></i> <span>Consulter les messages</span></a></li>
+        <li><a href="{{ url('/contact-admin')}}"><i class="fa fa-comments"></i> <span>Consulter les messages</span></a></li>
         <li><a href="#"><i class="fa fa-wrench"></i> <span>Autre</span></a></li>
 
 
