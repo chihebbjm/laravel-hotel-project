@@ -15,7 +15,7 @@
 		<th> nom </th>
 		<th> prenom </th>
 		<th> telephone </th>
-
+		<th>details</th>
 	</tr>
 	@foreach($reservation as $key => $info)
 	<tr class="table-light">
@@ -24,7 +24,89 @@
 			<td> {{ $info->nom }} </td>
 			<td> {{ $info->prenom }} </td>
 			<td> {{ $info->telephone }} </td>
-			
+			<td>
+				<button class="btn btn-success" data-toggle="modal" data-target="#detailsmodal"> 
+					details
+				</button>
+
+						
+				<div class="modal fade" id="detailsmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">
+							<h3> Detaills </h3>
+						</h5>
+						<label type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</label>
+						</div>
+						<div class="modal-body">
+							
+							<div class="row">
+
+								<div class="col-lg-12" style="margin-bottom: 10px">
+									<div class="form-group">
+										<label>Email:</label>
+										<input type="text" class="form-control" placeholder="{{$info->email}}" disabled="">
+							
+									</div>
+								</div>
+
+		
+
+								<div class="col-lg-12" style="margin-bottom: 10px">
+									<div class="form-group">
+									<label>Date_arrivee:</label>
+									<input type="text" class="form-control" placeholder="{{$info->date_arrivee}}" disabled="">
+								
+									</div>
+								</div>
+
+								<div class="col-lg-12" style="margin-bottom: 10px">
+									<div class="form-group">
+										<label>Date_depart:</label>
+										<input type="text" class="form-control" placeholder="{{$info->date_depart}}" disabled="">
+
+									</div>
+								</div>
+
+								<div class="col-lg-12" style="margin-bottom: 10px">
+									<div class="form-group">
+										<label>nombre d'adultes</label>
+										<input type="text" class="form-control" placeholder="{{$info->nb_adultes}}" disabled="">
+
+									</div>
+								</div>
+
+								<div class="col-lg-12" style="margin-bottom: 10px">
+									<div class="form-group">
+										<label>nombre d'enfant:</label>
+										<input type="text" class="form-control" placeholder="{{$info->nb_enfants}}" disabled="">
+
+									</div>
+								</div>
+
+								<div class="col-lg-12" style="margin-bottom: 10px">
+									<div class="form-group">
+										<label>demande supplémentaire:</label>
+										<input type="text" class="form-control" placeholder="{{$info->demande_supp}}" disabled="">
+
+									</div>
+								</div>
+
+
+
+						</div>
+						
+					</div>
+					</div>
+				</div>
+
+
+
+
+			</td>
 			
 		</tr>
 	@endforeach

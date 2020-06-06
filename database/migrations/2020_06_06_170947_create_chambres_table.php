@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateChambresTable extends Migration
 {
-   
+      
 /**
      * Run the migrations.
      *
@@ -20,6 +20,7 @@ class CreateChambresTable extends Migration
             $table->string('type');
             $table->string('nom');
             $table->string('description');
+            $table->string('status');
             $table->string('image');
             $table->integer('prix_pax');
             $table->timestamps();
@@ -37,4 +38,5 @@ class CreateChambresTable extends Migration
         Schema::dropIfExists('chambres');
     }
 
+    
 }

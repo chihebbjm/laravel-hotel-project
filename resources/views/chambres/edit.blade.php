@@ -56,6 +56,16 @@
 			</div>
 
 
+			<div class="col-md-12" style="margin-bottom: 20px">
+				<div class="form-group">
+					<label>Status:</label>
+					<select name="status" id="pet-select" class="form-control">
+						<option value="disponible">Disponible</option>
+						<option value="occupe">Occupé</option>
+					</select>
+				</div>
+			</div>
+
 
 			<div class="col-md-8" style="margin-bottom: 20px">
 				<div class="form-group">

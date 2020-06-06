@@ -51,7 +51,7 @@
 		<div class="col-md-8">
 
 			<div class="pull-left" style="margin-left: 20px">
-				<button class="btn btn-success" data-toggle="modal" data-target="#exampleModal"> 
+				<button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"> 
 					<i class="fa fa-plus" aria-hidden="true">
 						slider
 					</i>

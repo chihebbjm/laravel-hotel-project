@@ -11,7 +11,21 @@
 	@endif
 	</div>
 </div>
-
+<!-- 
+<h3>
+	@foreach($chambres_dispo as $key => $disponible)
+	<label>
+		{{$disponible->id}}
+	</label>
+	<label>
+		{{$disponible->nom}}
+	</label>
+	<label>
+		{{$disponible->status}}
+	</label>
+	@endforeach
+</h3>
+-->
 
 <div class="card-body">
 <div class="card" style="margin-right:40px;margin-left:40px;">
@@ -27,6 +41,7 @@
 		<th> description </th>
 		<th> prix_pax </th>
 		<th> commodites</th>
+		<th> status</th>
 		<th> action </th>
 	</tr>
 	@foreach($chambres as $key => $chambre)
@@ -37,6 +52,14 @@
 			<td style="text-align: center; vertical-align: middle;" > 
 				{{ ++$i }} 
 			</td>
+			<td style="vertical-align: middle;" > 
+				@if($chambre->status =='disponible')         
+				<label class="btn btn-success"> {{ $chambre->status }} </label>	
+				@else
+				<label class="btn btn-warning"> {{ $chambre->status }} </label>	
+				@endif
+			</td>
+		
 			<td style="text-align: center; vertical-align: middle;" > 
 				{{ $chambre->nom }} 
 			</td>
@@ -84,7 +107,7 @@
 	<div class="col-md-8">
 
 		<div class="pull-left" style="margin-left: 20px">
-			<button class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
+			<button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
 					
 					<i class="fa fa-plus" aria-hidden="true"> Chambres
 					</i>
@@ -151,7 +174,18 @@
 						</div>
 					</div>
 		
-	
+
+							
+					<div class="col-lg-12" style="margin-bottom: 20px">
+						<div class="form-group">
+							<label>Status:</label>
+							<select name="status" id="pet-select" class="form-control">
+								<option value="disponible">Disponible</option>
+								<option value="occupe">Occupé</option>
+							</select>
+						</div>
+					</div>
+			
 
 
 					<div class="col-md-12" style="margin-bottom: 10px">

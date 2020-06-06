@@ -32,10 +32,10 @@ class ChambresController extends Controller
     */
    public function index()
     {
-     
+       $chambres_dispo= Chambres::where('status',"disponible")->get();
        $chambres = Chambres::latest()->paginate(5);
        $commodites = Commodites::latest()->paginate(5);
-       return view('chambres.index', compact('chambres','commodites'))->with('i', (request()->input('page', 1) - 1) * 5);
+       return view('chambres.index', compact('chambres','commodites','chambres_dispo'))->with('i', (request()->input('page', 1) - 1) * 5);
   
     }
 
@@ -65,6 +65,7 @@ class ChambresController extends Controller
             'nom' => 'required',
             'type' => 'required',
             'description' => 'required',
+            'status'=> 'required',
             'image' =>'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'prix_pax'=>'required'
         ]);
@@ -79,6 +80,7 @@ class ChambresController extends Controller
         $chambre->type=$request->type;
         $chambre->nom=$request->nom;
         $chambre->description=$request->description;
+        $chambre->status=$request->status;
         $chambre->prix_pax=$request->prix_pax;
         $chambre->image=$new_name;
         $chambre->save();
@@ -145,6 +147,7 @@ class ChambresController extends Controller
             'nom' => 'required',
             'type'=>'required',
             'description' => 'required',
+            'status' => 'required',
             'image' =>'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'prix_pax'=>'required'
         ]);
@@ -159,6 +162,7 @@ class ChambresController extends Controller
                 'nom' => 'required',
                 'type'=>'required',
                 'description' => 'required',
+                'status' => 'required',
                 'prix_pax'=>'required'
             ]);
         }
@@ -167,6 +171,7 @@ class ChambresController extends Controller
         $chambre->nom=$request->nom;
         $chambre->type=$request->type;
         $chambre->description=$request->description;
+        $chambre->status=$request->status;
         $chambre->prix_pax=$request->prix_pax;
         $chambre->image=$image_name;
         $chambre->update();
