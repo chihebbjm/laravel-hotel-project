@@ -9,6 +9,5 @@ class Reservation extends Model
     protected $table = 'reservation';
     protected $fillable = ['nom', 'prenom','telephone','email'
     ,'demande_supp','date_arrivee','date_depart','nb_adultes','nb_enfants'];
-    
-    
+       
 }

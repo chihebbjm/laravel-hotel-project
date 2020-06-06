@@ -284,75 +284,34 @@ desired effect
 <!-- AdminLTE App -->
 <script src="{{ asset('dist/js/adminlte.min.js') }}"></script>
 
-<!-- Optionally, you can add Slimscroll and FastClick plugins.
-     Both of these plugins are recommended to enhance the
-     user experience. -->
+
+<script>
+
+  $('#detailsmodal').on('show.bs.modal',function (event){
+    var button = $(event.relatedTarget)
+    //data-email in the  button to open modal :
+    var email =button.data('email')
+    var date_arrivee =button.data('date_arrivee')
+    var date_depart =button.data('date_depart')
+    var nb_adultes =button.data('nb_adultes')
+    var nb_enfants =button.data('nb_enfants')
+    var demande_supp =button.data('demande_supp')
+
+    var modal = $(this)
+    //the id of the input  (#email)
+    modal.find('.modal-body #email').val(email);
+    modal.find('.modal-body #date_arrivee').val(date_arrivee);
+    modal.find('.modal-body #date_depart').val(date_depart);
+    modal.find('.modal-body #nb_adultes').val(nb_adultes);
+    modal.find('.modal-body #nb_enfants').val(nb_enfants);
+    modal.find('.modal-body #demande_supp').val(demande_supp);
+
+
+  })
+
+</script>
+
 </body>
-
-
-
-
-
-
-
-	<!-- Modal -->
-	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog" role="document">
-		  <div class="modal-content">
-			<div class="modal-header">
-			  <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-			  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-				<span aria-hidden="true">&times;</span>
-			  </button>
-			</div>
-			<div class="modal-body">
-			  
-	
-				
-	
-				@if($errors->any())
-				<div class="alert alert-danger">
-					<strong>Oopps! </strong> Something went wrong.
-					<ul>
-						@foreach($errors->all() as $error)
-							<li> {{ $error }} </li>
-						@endforeach
-					</ul>
-				</div>
-			@endif
-	
-		<!-- /.box-header -->
-		<!-- form start -->
-		<form class="form-horizontal"action="{{ route('products.store') }}" method="POST">
-		@csrf
-		  <div class="box-body">
-			<div class="form-group">
-			  <label for="inputEmail3" class="col-sm-2 control-label">Name:</label>
-	
-			  <div class="col-sm-10">
-				<input type="text" name="name" class="form-control" placeholder="Name">
-			</div>
-			</div>
-			
-			<div class="form-group">
-				<label for="inputEmail3" class="col-sm-2 control-label">Detail:</label>
-	
-				<div class="col-sm-10">
-					<textarea name="detail" placeholder="Detail" class="form-control"></textarea>
-				</div>
-			  </div>
-			  
-        <button type="submit" class="btn btn-primary">Submit</button>
-
-
-		  </div>
-	
-	
-		
-		  </div>
-		</div>
-	
-	  </div>
 
 
 
