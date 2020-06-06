@@ -2,15 +2,23 @@
 @section('content')
 	
 
+<div class="card-body bg-light" style="padding-top:50px">
+	<div class="card" style="margin-right:40px;margin-left:40px;">
+	<div style="background: white">
+
 
 
 	<div class="row" style="padding: 30px">
 		<div class="col-md-6">
 			<div>
-				<h3> Edit Product </h3>
+				<h3> Modifer Image Galerie </h3>
 			</div>
 			<div >
-				<a class="btn btn-success" href="{{ route('galerie.index') }}"> Back to Galerie List </a>
+				<a class="btn btn-success" href="{{ route('galerie.index') }}"> 
+					<i class="fa fa-chevron-left" aria-hidden="true">
+						 List Image  Galerie
+					</i>
+				</a>
 			</div>
 		</div>
 	</div>
@@ -43,18 +51,17 @@
 				</div>
 			</div>
 
-			<div class="col-md-12">
+			<div class="col-sm-12" style="margin-bottom: 20px">
 				<div class="form-group">
-					<strong>Region:</strong>
-							<select name="tag" id="pet-select">
-								<option value="sousse">Sousse</option>
-								<option value="djerba">Djerba</option>
-								<option value="tozeur">Tozeur</option>
-								<option value="hammamet">Hammamet</option>
+					<label>Tag:</label>
+					<select name="tag" id="pet-select" class="form-control">
+						<option value="activites">Activites</option>
+						<option value="restaurant">Restaurant</option>
+						<option value="tennis">Tennis</option>
+						<option value="vue mer">Vue mer</option>
 					</select>
 				</div>
 			</div>
-
 			
 			<div class="col-md-8" style="margin-bottom: 20px">
 				<div class="form-group">
@@ -71,7 +78,9 @@
 	</form>
 
 
-
+	</div>
+	</div>
+</div>
 
 
 

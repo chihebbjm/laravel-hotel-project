@@ -63,8 +63,9 @@ class ChambresController extends Controller
         //dd($request);
         $request->validate([
             'nom' => 'required',
+            'type' => 'required',
             'description' => 'required',
-            'image' =>'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' =>'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'prix_pax'=>'required'
         ]);
 
@@ -75,6 +76,7 @@ class ChambresController extends Controller
 
         //NEW
         $chambre=new Chambres;
+        $chambre->type=$request->type;
         $chambre->nom=$request->nom;
         $chambre->description=$request->description;
         $chambre->prix_pax=$request->prix_pax;
@@ -141,6 +143,7 @@ class ChambresController extends Controller
         {
         $request->validate([
             'nom' => 'required',
+            'type'=>'required',
             'description' => 'required',
             'image' =>'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'prix_pax'=>'required'
@@ -154,6 +157,7 @@ class ChambresController extends Controller
         {
             $request->validate([
                 'nom' => 'required',
+                'type'=>'required',
                 'description' => 'required',
                 'prix_pax'=>'required'
             ]);
@@ -161,6 +165,7 @@ class ChambresController extends Controller
 
         //UPDATE :
         $chambre->nom=$request->nom;
+        $chambre->type=$request->type;
         $chambre->description=$request->description;
         $chambre->prix_pax=$request->prix_pax;
         $chambre->image=$image_name;

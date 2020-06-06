@@ -166,10 +166,10 @@ class SliderController extends Controller
      * @param  \App\Slider  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy( Slider $slide)
+    public function destroy( Slider $slider)
     {
         //delet from the chambre table 
-        $slide->delete();
+        $slider->delete();
       
         return redirect()->route('slider.index')
                             ->with('success', 'slider  Deleted Successfully!');

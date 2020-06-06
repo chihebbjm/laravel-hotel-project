@@ -37,3 +37,8 @@ Route::resource('slider', 'SliderController');
 
 
 Route::resource('galerie', 'GalerieController');
+
+
+//contact for admin (ContactAdminController) ==> auth
+
+//contact for clinet (ContactClientController)

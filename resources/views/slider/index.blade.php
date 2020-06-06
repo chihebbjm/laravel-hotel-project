@@ -2,6 +2,7 @@
 @section('content')
 	
 
+
 <div class="row" style="padding-top: 10px">
 	<div class="col-md-8">
 	@if($message = Session::get('success'))
@@ -13,9 +14,13 @@
 </div>
 
 
-	<table class="table table-bordered" 
-	style="padding: 40px;margin-right:40px;margin-left:40px">
-	<tr class="table-success">
+<div class="card-body">
+	<div class="card" style="margin-right:40px;margin-left:40px;">
+	<table id="example2" class="table table-bordered"  aria-describedby="example2_info">
+	
+	
+	
+	<tr class="table">
 			<th>Image</th>
 			<th> No </th>
 			<th> Titre </th>
@@ -27,10 +32,10 @@
 				<td>
 				<img width="100" height="100" src="/images/{{ $slide->image }}" class="loaded" alt="icon" >
 				</td>
-				<td> {{ ++$i }} </td>
-				<td> {{ $slide->titre }} </td>
-				<td> {{ $slide->description }} </td>
-				<td>
+				<td style="text-align: center; vertical-align: middle;"> {{ ++$i }} </td>
+				<td style="text-align: center; vertical-align: middle;"> {{ $slide->titre }} </td>
+				<td style="text-align: center; vertical-align: middle;"> {{ $slide->description }} </td>
+				<td style="text-align: center; vertical-align: middle;">
 					<form action="{{ route('slider.destroy', $slide->id) }}" method="POST">
 						<a class="btn btn-primary" href="{{ route('slider.edit', $slide->id) }}">Edit</a>
 						@csrf
@@ -42,15 +47,21 @@
 		@endforeach
 	</table>
 
-	<div class="row" style="margin-left:10px">
+	<div class="row" style="margin:10px">
 		<div class="col-md-8">
 
 			<div class="pull-left" style="margin-left: 20px">
-				<a class="btn btn-success" data-toggle="modal" data-target="#exampleModal"> Add image to slider</a>
+				<button class="btn btn-success" data-toggle="modal" data-target="#exampleModal"> 
+					<i class="fa fa-plus" aria-hidden="true">
+						slider
+					</i>
+					</button>
 			</div>
 		</div>
 	</div>
 
+	</div>
+</div>
 
 
 
@@ -60,7 +71,7 @@
 	  <div class="modal-content">
 		<div class="modal-header">
 		  <h5 class="modal-title" id="exampleModalLabel">
-			  <h3> Add New Product </h3>
+			  <h3>Ajouter image slider </h3>
 			</h5>
 		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 			<span aria-hidden="true">&times;</span>
@@ -97,12 +108,14 @@
 						</div>
 					</div>
 		
-					<div class="col-md-8" style="margin-bottom: 20px">
-						<div class="form-group">
-							<label style="margin-bottom: 20px">Select Image</label>
-							<input type="file" name="image" />
-						</div>
+					<div class="col-md-12" style="margin-bottom: 20px">
+						<div class="custom-file">
+							<input type="file" class="custom-file-input" id="customFile" name="image">
+							<label class="custom-file-label" for="customFile" name="image">Image</label>
+					  	</div>
 					</div>
+
+
 					<div class="col-lg-12">
 						
 						<button type="submit" class="btn btn-primary">Submit</button>

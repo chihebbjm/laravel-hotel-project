@@ -17,7 +17,7 @@ class CommoditesController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth', ['only' => ['edit']]);
     }
 
     /**
@@ -27,7 +27,7 @@ class CommoditesController extends Controller
      */
     public function index()
     {
-      
+        
         $commodites = Commodites::latest()->paginate(5);
         return view('commodites.index', compact('commodites'))->with('i', (request()->input('page', 1) - 1) * 5);
     

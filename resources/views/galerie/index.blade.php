@@ -12,27 +12,30 @@
 	</div>
 </div>
 
-
-	<table class="table table-bordered" 
-	style="padding: 40px;margin-right:40px;margin-left:40px">
-		<tr class="table-dark">
+<div class="card-body">
+	<div class="card" style="margin-right:40px;margin-left:40px;">
+	<table id="example2" class="table table-bordered"  aria-describedby="example2_info">
+	
+		<thead>
+			<tr>
 			<th>Image</th>
 			<th> No </th>
 			<th> Titre </th>
-			<th> Region </th>
+			<th> Tag </th>
 			<th> Action </th>
 		</tr>
+		</thead>
 		@foreach($galeries as $key => $img)
 		<tr class="table-light">
 
 				<td>
 				<img width="100" height="100" src="/images/{{ $img->image }}" class="loaded" alt="icon" >
 				</td>
-				<td> {{ ++$i }} </td>
-				<td> {{ $img->titre }} </td>
-				<td> {{ $img->tag }} </td>
+				<td style="text-align: center; vertical-align: middle;"> {{ ++$i }} </td>
+				<td style="text-align: center; vertical-align: middle;"> {{ $img->titre }} </td>
+				<td style="text-align: center; vertical-align: middle;"> {{ $img->tag }} </td>
 
-				<td>
+				<td style="text-align: center; vertical-align: middle;">
 					<form action="{{ route('galerie.destroy', $img->id) }}" method="POST">
 						<a class="btn btn-primary" href="{{ route('galerie.edit', $img->id) }}">Edit</a>
 						@csrf
@@ -44,15 +47,22 @@
 		@endforeach
 	</table>
 
-	<div class="row" style="margin-left:10px">
+	<div class="row" style="margin:10px">
 		<div class="col-md-8">
 
 			<div class="pull-left" style="margin-left: 20px">
-				<a class="btn btn-success" data-toggle="modal" data-target="#exampleModal"> Add image to slider</a>
+				<button class="btn btn-success" data-toggle="modal" data-target="#exampleModal"> 
+					<i class="fa fa-plus" aria-hidden="true">
+						image galerie
+					</i>
+				</button>
 			</div>
 		</div>
 	</div>
 
+
+	</div>
+</div>
 
 
 
@@ -62,7 +72,7 @@
 	  <div class="modal-content">
 		<div class="modal-header">
 		  <h5 class="modal-title" id="exampleModalLabel">
-			  <h3> Add New Image to galerie </h3>
+			  <h3> Ajouter Image</h3>
 			</h5>
 		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 			<span aria-hidden="true">&times;</span>
@@ -87,37 +97,33 @@
 				<div class="row">
 					<div class="col-lg-12" style="margin-bottom: 20px">
 						<div class="form-group">
-							<strong>Titre:</strong>
+							<label>titre:</label>
 							<input type="text" name="titre" class="form-control" placeholder="titre">
 						</div>
 					</div>
 		
-					<div class="col-lg-12" style="margin-bottom: 20px">
+					<div class="col-sm-12" style="margin-bottom: 20px">
 						<div class="form-group">
-							<strong>Region:</strong>
-							<select name="tag" id="pet-select">
-								<option value="sousse">Sousse</option>
-								<option value="djerba">Djerba</option>
-								<option value="tozeur">Tozeur</option>
-								<option value="hammamet">Hammamet</option>
+							<label>Tag:</label>
+							<select name="tag" id="pet-select" class="form-control">
+								<option value="activites">Activites</option>
+								<option value="restaurant">Restaurant</option>
+								<option value="suite">Suite</option>
+								<option value="vue-mer">Vue mer</option>
 							</select>
 						</div>
 					</div>
 		
-					<div class="col-md-8" style="margin-bottom: 20px">
-						<div class="form-group">
-							<label style="margin-bottom: 20px">Select Image</label>
-							<input type="file" name="image" />
-						</div>
+					
+					<div class="col-md-12" style="margin-bottom: 20px">
+						<div class="custom-file">
+							<input type="file" class="custom-file-input" id="customFile" name="image">
+							<label class="custom-file-label" for="customFile">Image</label>
+					  	</div>
 					</div>
 
-					<div class="col-md-8">
-						<div class="form-group">
-							<label style="margin-bottom: 20px">Select Image</label>
-							<input type="date" name="date" />
-						</div>
-					</div>
-					<div class="col-lg-12">
+				
+					<div class="col-md-12">
 						
 						<button type="submit" class="btn btn-primary">Submit</button>
 					</div>

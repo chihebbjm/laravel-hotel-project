@@ -36,6 +36,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Google Font -->
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
+
+
+
 </head>
 <!--
 BODY TAG OPTIONS:
@@ -177,7 +181,7 @@ desired effect
         
 
         <li class="treeview">
-          <a href="#"><i class="fa fa-link"></i> <span>Gérer les commodités</span>
+          <a href="#"><i class="fa fa-plug"></i> <span>Gérer les commodités</span>
             <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
@@ -189,7 +193,7 @@ desired effect
 
         
         <li class="treeview">
-          <a href="#"><i class="fa fa-link"></i> <span>Gérer les chambres</span>
+          <a href="#"><i class="fa fa-home" ></i> <span>Gérer les chambres</span>
             <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
@@ -201,7 +205,7 @@ desired effect
 
     
         <li class="treeview">
-          <a href="#"><i class="fa fa-link"></i> <span>Gérer les slider</span>
+          <a href="#"><i class="fa fa-sliders"></i> <span>Gérer les slider</span>
             <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
@@ -214,7 +218,7 @@ desired effect
       
 
         <li class="treeview">
-          <a href="#"><i class="fa fa-link"></i> <span>Gérer galerie</span>
+          <a href="#"><i class="fa fa-file-image-o"></i> <span>Gérer galerie</span>
             <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
@@ -225,11 +229,12 @@ desired effect
         </li>
 
 
-        <li><a href="#"><i class="fa fa-link"></i> <span>Consulter es réservation</span></a></li>
-        <li><a href="#"><i class="fa fa-link"></i> <span>Consulter les messages</span></a></li>
-        <li><a href="#"><i class="fa fa-link"></i> <span>Autre</span></a></li>
+        <li><a href="#"><i class="fa fa-list-alt"></i> <span>Consulter es réservation</span></a></li>
+        <li><a href="#"><i class="fa fa-comments"></i> <span>Consulter les messages</span></a></li>
+        <li><a href="#"><i class="fa fa-wrench"></i> <span>Autre</span></a></li>
 
 
+<!-- /.
         <li class="treeview">
           <a href="#"><i class="fa fa-link"></i> <span>Gérer les Produit</span>
             <span class="pull-right-container">
@@ -240,7 +245,7 @@ desired effect
             <li><a href="{{ url('/products') }}">Demo exemple </a></li>
           </ul>
         </li>
-
+-->
         
       </ul>
       <!-- /.sidebar-menu -->

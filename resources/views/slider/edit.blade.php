@@ -2,15 +2,25 @@
 @section('content')
 	
 
+<div class="card-body bg-light" style="padding-top:50px">
+	<div class="card" style="margin-right:40px;margin-left:40px;">
+	<div style="background: white">
+
+
+
 
 
 	<div class="row" style="padding: 30px">
 		<div class="col-md-6">
 			<div>
-				<h3> Edit Product </h3>
+				<h3> Modifer Image Slider </h3>
 			</div>
 			<div >
-				<a class="btn btn-success" href="{{ route('slider.index') }}"> Back to Product List </a>
+				<a class="btn btn-success" href="{{ route('slider.index') }}"> 
+					<i class="fa fa-chevron-left" aria-hidden="true">
+					List Image Slider
+					</i>
+				</a>
 			</div>
 		</div>
 	</div>
@@ -65,7 +75,9 @@
 		</div>
 	</form>
 
-
+	</div>
+	</div>
+</div>
 
 
 

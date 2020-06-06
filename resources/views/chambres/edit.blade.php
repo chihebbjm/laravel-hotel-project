@@ -4,10 +4,15 @@
 
 
 
+<div class="card-body bg-light" style="padding-top:50px">
+	<div class="card" style="margin-right:40px;margin-left:40px;">
+	<div style="background: white">
+
+	
 	<div class="row" style="padding: 30px">
 		<div class="col-md-6">
 			<div>
-				<h3> Edit chambres </h3>
+				<h3> Modifer chambres </h3>
 			</div>
 			<div >
 				<a class="btn btn-success" href="{{ route('chambres.index') }}"> Back to chambres List </a>
@@ -62,10 +67,11 @@
 
 			<div class="col-md-12" style="margin-bottom: 20px">
 				<div class="form-group">
-					<strong>prix_pax :</strong>
-					<textarea name="prix_pax" placeholder="prix_pax" class="form-control">{{ $chambre->prix_pax }}</textarea>
+					<strong>Prix_pax :</strong>
+					<input type="number" name="prix_pax" placeholder="{{ $chambre->prix_pax }}" class="form-control"></textarea>
 				</div>
 			</div>
+
 
 			
 			<div class="col-md-12" style="margin-bottom: 20px">
@@ -83,6 +89,27 @@
 				</div>
 				</div>
 
+
+				
+
+				
+				<div class="col-md-12" style="margin-bottom: 10px">
+					
+					<div class="form-group">
+					  <label>Type chambre</label>
+					  <select class="form-control" name="type">
+						<option value="chambre réguliere">Chambre régulière</option>
+						<option value="chambre familiale">Chambre familiale</option>
+						<option value="suite">Suite</option>
+						<option value="chambres communicantes">Chambres communicantes</option>
+						<option value="chambres voisines">Chambres voisines</option>
+					  </select>
+					</div>
+				  </div>
+
+
+
+
 			<div class="col-lg-12" >
 				<button type="submit" class="btn btn-primary">Submit</button>
 			</div>
@@ -90,9 +117,10 @@
 	</form>
 
 
+	</div>
+</div>
 
-
-
+</div>
 
 
   

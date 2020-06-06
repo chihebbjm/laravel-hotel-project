@@ -6,7 +6,8 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateChambresTable extends Migration
 {
-    /**
+   
+/**
      * Run the migrations.
      *
      * @return void
@@ -16,6 +17,7 @@ class CreateChambresTable extends Migration
 
         Schema::create('chambres', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('type');
             $table->string('nom');
             $table->string('description');
             $table->string('image');
@@ -34,4 +36,5 @@ class CreateChambresTable extends Migration
     {
         Schema::dropIfExists('chambres');
     }
+
 }

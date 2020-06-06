@@ -161,11 +161,11 @@ class GalerieController extends Controller
 
         //UPDATE :
         $galerie->titre=$request->titre;
-        $galerie->description=$request->description;
+        $galerie->tag=$request->tag;
         $galerie->image=$image_name;
         $galerie->update();
       
-        return redirect()->route('slider.index')
+        return redirect()->route('galerie.index')
                             ->with('success', 'slider Updated Successfully!');
     }
 

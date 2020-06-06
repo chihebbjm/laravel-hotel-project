@@ -23,6 +23,6 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('adminlte.dashboard');
+        return redirect()->route('commodites.index');
     }
 }

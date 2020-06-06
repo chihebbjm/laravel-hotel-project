@@ -3,14 +3,22 @@
 	
 
 
+<div class="card-body bg-light" style="padding-top:50px">
+	<div class="card" style="margin-right:40px;margin-left:40px;">
+	<div style="background: white">
+
 
 	<div class="row" style="padding: 30px">
 		<div class="col-md-6">
 			<div>
-				<h3> Edit Product </h3>
+				<h3> Modifer Commodites </h3>
 			</div>
 			<div >
-				<a class="btn btn-success" href="{{ route('commodites.index') }}"> Back to Product List </a>
+				<a class="btn btn-success" href="{{ route('commodites.index') }}"> 
+					<i class="fa fa-chevron-left" aria-hidden="true">
+						list Commodites
+					</i>
+				</a>
 			</div>
 		</div>
 	</div>
@@ -52,22 +60,42 @@
 
 		
 			<div class="col-md-12">
-				<div class="col-lg-12">
-					<div class="form-group">
+				<div class="form-group">
+					
+					<label class="radio-inline"><input type="radio" name="icon" checked value="wifi.png">
+						<img width="24" height="24" src="{{asset('/images/commodites_icon/wifi.png')}}"" class="loaded">
+					</label>
+					<label class="radio-inline"><input type="radio" name="icon" value="balcon.png">
+						<img width="24" height="24" src="{{asset('/images/commodites_icon/balcon.png')}}" class="loaded">
 						
-						<label class="radio-inline"><input type="radio" name="icon" checked value="wifi.png">
-							<img width="24" height="24" src="{{asset('/images/wifi.png')}}"" class="loaded">
-						</label>
-						<label class="radio-inline"><input type="radio" name="icon" value="balcon.png">
-							<img width="24" height="24" src="{{asset('/images/balcon.png')}}" class="loaded">
+					</label>
+					<label class="radio-inline"><input type="radio" name="icon" value="climatisation.png">
+					<img width="24" height="24" src="{{asset('/images/commodites_icon/climatisation.png')}}" class="loaded">	
+					</label>
 							
-						</label>
-						<label class="radio-inline"><input type="radio" name="icon" value="climatisation.png">
-						<img width="24" height="24" src="{{asset('/images/climatisation.png')}}" class="loaded">	
-						
-						</label>
-					</div>
+					</label>
+					<label class="radio-inline"><input type="radio" name="icon" value="lit.png">
+					<img width="24" height="24" src="{{asset('/images/commodites_icon/lit.png')}}" class="loaded">	
+					</label>
+
+					</label>
+					<label class="radio-inline"><input type="radio" name="icon" value="minibar.png">
+					<img width="24" height="24" src="{{asset('/images/commodites_icon/minibar.png')}}" class="loaded">	
+					</label>
+
+					</label>
+					<label class="radio-inline"><input type="radio" name="icon" value="sechoir_cheveux.png">
+					<img width="24" height="24" src="{{asset('/images/commodites_icon/sechoir_cheveux.png')}}" class="loaded">	
+					</label>
+
+					</label>
+					<label class="radio-inline"><input type="radio" name="icon" value="television.png">
+					<img width="24" height="24" src="{{asset('/images/commodites_icon/television.png')}}" class="loaded">	
+					</label>
+
 				</div>
+			</div>
+
 
 				<div class="col-lg-12">
 
@@ -78,7 +106,9 @@
 	</form>
 
 
-
+	</div>
+	</div>
+</div>
 
 
 

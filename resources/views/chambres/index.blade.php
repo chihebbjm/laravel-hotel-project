@@ -13,13 +13,14 @@
 </div>
 
 
+<div class="card-body">
+<div class="card" style="margin-right:40px;margin-left:40px;">
+<table id="example2" class="table table-bordered"  aria-describedby="example2_info">
 
 
-<table class="table table-bordered"   
-style="padding: 40px;margin-right:40px;margin-left:40px;
-">
 
-<tr class="table-info">
+
+<tr class="table">
 		<th>Image</th>
 		<th> No </th>
 		<th> nom </th>
@@ -50,12 +51,15 @@ style="padding: 40px;margin-right:40px;margin-left:40px;
 				<div class="row">
 					
 					@foreach ($chambre->commodites as $one_commodites)
-						
+					
+
 							<div class="col-md-2">
-								<img width="24" height="24" src="/images/{{ $one_commodites->icon }}" class="loaded">
+								<div class="radio-lien">
+								<img width="24" height="24" src="/images/commodites_icon/{{ $one_commodites->icon }}" class="loaded">
 								<label class="label label-default">{{ $one_commodites->nom }}</label>
 							</div>
-					
+					</div>
+
 					@endforeach
 				</div>
 			
@@ -76,14 +80,25 @@ style="padding: 40px;margin-right:40px;margin-left:40px;
 
 
 
-	<div class="row" style="margin-left:10px">
-		<div class="col-md-8">
+<div class="row" style="margin:10px">
+	<div class="col-md-8">
 
-			<div class="pull-left" style="margin-left: 20px">
-				<a class="btn btn-success" data-toggle="modal" data-target="#exampleModal"> Create Chambres</a>
-			</div>
+		<div class="pull-left" style="margin-left: 20px">
+			<button class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
+					
+					<i class="fa fa-plus" aria-hidden="true"> Chambres
+					</i>
+					</button>
 		</div>
 	</div>
+</div>
+
+
+
+</div>
+</div>
+
+
 
 
 
@@ -94,7 +109,7 @@ style="padding: 40px;margin-right:40px;margin-left:40px;
 	  <div class="modal-content">
 		<div class="modal-header">
 		  <h5 class="modal-title" id="exampleModalLabel">
-			  <h3> Add New Commodites </h3>
+			  <h3> Ajouter Chambres </h3>
 			</h5>
 		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 			<span aria-hidden="true">&times;</span>
@@ -136,20 +151,30 @@ style="padding: 40px;margin-right:40px;margin-left:40px;
 						</div>
 					</div>
 		
-				
-					<div class="col-md-8" style="margin-bottom: 20px">
+	
+
+
+					<div class="col-md-12" style="margin-bottom: 10px">
 						<div class="form-group">
-							<label style="margin-bottom: 20px">Select Image</label>
-							<input type="file" name="image" />
+							<strong>prix_pax :</strong>
+							<input type="number"name="prix_pax" placeholder="prix_pax" class="form-control"></textarea>
 						</div>
 					</div>
 
-					<div class="col-md-12" style="margin-bottom: 20px">
+
+					
+					<div class="col-md-12" style="margin-bottom: 10px">	
 						<div class="form-group">
-							<strong>prix_pax :</strong>
-							<textarea name="prix_pax" placeholder="prix_pax" class="form-control"></textarea>
+						  <label>Select</label>
+						  <select class="form-control" name="type">
+							<option value="chambre réguliere">Chambre régulière</option>
+							<option value="chambre familiale">Chambre familiale</option>
+							<option value="suite">Suite</option>
+							<option value="chambres communicantes">Chambres communicantes</option>
+							<option value="chambres voisines">Chambres voisines</option>
+						  </select>
 						</div>
-					</div>
+					  </div>
 
 
 					<div class="col-md-12" style="margin-bottom: 20px">
@@ -158,7 +183,7 @@ style="padding: 40px;margin-right:40px;margin-left:40px;
 					@foreach($commodites as $key => $commodite)
 					<div class="form-check form-check-inline">	
 						<label class="radio-inline"><input class="form-check-input" type="checkbox" name="commodites_icon[]"  value="{{$commodite->id}}">
-							<img width="24" height="24" src="/images/{{ $commodite->icon }}" class="loaded">
+							<img width="24" height="24" src="/images/commodites_icon/{{ $commodite->icon }}" class="loaded">
 							</label>
 						<label>	{{$commodite->nom}}</label>	
 					</div>
@@ -166,6 +191,19 @@ style="padding: 40px;margin-right:40px;margin-left:40px;
 
 					</div>
 					</div>
+
+				
+					
+
+					<div class="col-md-12" style="margin-bottom: 20px">
+						<div class="custom-file">
+							<input type="file" class="custom-file-input" id="customFile" name="image">
+							<label class="custom-file-label" for="customFile">Image</label>
+					  	</div>
+					</div>
+
+
+					
 
 					<div class="col-lg-12">
 						<button type="submit" class="btn btn-primary">Submit</button>

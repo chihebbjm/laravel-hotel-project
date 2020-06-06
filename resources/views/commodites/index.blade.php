@@ -14,10 +14,13 @@
 
 
 
+<div class="card-body">
+	<div class="card" style="margin-right:40px;margin-left:40px;">
+	<table id="example2" class="table table-bordered"  aria-describedby="example2_info">
+	
 
-<table class="table table-bordered" 
-style="padding: 40px;margin-right:40px;margin-left:40px">
-<tr class="table-danger">
+		
+<tr class="table">
 		<th>Icon</th>
 		<th> No </th>
 		<th> nom </th>
@@ -27,12 +30,12 @@ style="padding: 40px;margin-right:40px;margin-left:40px">
 	@foreach($commodites as $key => $commodite)
 	<tr class="table-light">
 			<td>
-				<img width="24" height="24" src="/images/{{ $commodite->icon }}" class="loaded" alt="icon" >
+				<img width="24" height="24" src="/images/commodites_icon/{{ $commodite->icon }}" class="loaded" alt="icon" >
 			</td>
-			<td> {{ ++$i }} </td>
-			<td> {{ $commodite->nom }} </td>
-			<td> {{ $commodite->description }} </td>
-			<td>
+			<td style="text-align: center; vertical-align: middle;" > {{ ++$i }} </td>
+			<td style="text-align: center; vertical-align: middle;" > {{ $commodite->nom }} </td>
+			<td style="text-align: center; vertical-align: middle;" > {{ $commodite->description }} </td>
+			<td style="text-align: center; vertical-align: middle;" >
 				<form action="{{ route('commodites.destroy', $commodite->id) }}" method="POST">
 					<a class="btn btn-primary" href="{{ route('commodites.edit', $commodite->id) }}">Edit</a>
 					@csrf
@@ -48,14 +51,23 @@ style="padding: 40px;margin-right:40px;margin-left:40px">
 
 
 
-	<div class="row" style="margin-left:10px">
+	<div class="row" style="margin:10px">
 		<div class="col-md-8">
 
 			<div class="pull-left" style="margin-left: 20px">
-				<a class="btn btn-success" data-toggle="modal" data-target="#exampleModal"> Create New Commodites</a>
+
+				<button class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
+					
+					<i class="fa fa-plus" aria-hidden="true">
+					Commodites
+				</i>
+			</button>
 			</div>
 		</div>
 	</div>
+
+	</div>
+</div>
 
 
 
@@ -66,7 +78,7 @@ style="padding: 40px;margin-right:40px;margin-left:40px">
 	  <div class="modal-content">
 		<div class="modal-header">
 		  <h5 class="modal-title" id="exampleModalLabel">
-			  <h3> Add New Commodites </h3>
+			  <h3>Ajouter Commodites </h3>
 			</h5>
 		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 			<span aria-hidden="true">&times;</span>
@@ -94,34 +106,54 @@ style="padding: 40px;margin-right:40px;margin-left:40px">
 			<form action="{{ route('commodites.store') }}" method="POST">
 				@csrf
 				<div class="row">
-					<div class="col-lg-12">
+					<div class="col-md-12">
 						<div class="form-group">
 							<strong>nom:</strong>
 							<input type="text" name="nom" class="form-control" placeholder="nom">
 						</div>
 					</div>
 		
-					<div class="col-lg-12">
+					<div class="col-md-12">
 						<div class="form-group">
 							<strong>description</strong>
 							<textarea name="description" placeholder="description" class="form-control"></textarea>
 						</div>
 					</div>
 		
-					<div class="col-lg-12">
+					<div class="col-md-12">
 						<div class="form-group">
 							
 							<label class="radio-inline"><input type="radio" name="icon" checked value="wifi.png">
-								<img width="24" height="24" src="{{asset('/images/wifi.png')}}"" class="loaded">
+								<img width="24" height="24" src="{{asset('/images/commodites_icon/wifi.png')}}"" class="loaded">
 							</label>
 							<label class="radio-inline"><input type="radio" name="icon" value="balcon.png">
-								<img width="24" height="24" src="{{asset('/images/balcon.png')}}" class="loaded">
+								<img width="24" height="24" src="{{asset('/images/commodites_icon/balcon.png')}}" class="loaded">
 								
 							</label>
 							<label class="radio-inline"><input type="radio" name="icon" value="climatisation.png">
-							<img width="24" height="24" src="{{asset('/images/climatisation.png')}}" class="loaded">	
-							
+							<img width="24" height="24" src="{{asset('/images/commodites_icon/climatisation.png')}}" class="loaded">	
 							</label>
+									
+							</label>
+							<label class="radio-inline"><input type="radio" name="icon" value="lit.png">
+							<img width="24" height="24" src="{{asset('/images/commodites_icon/lit.png')}}" class="loaded">	
+							</label>
+
+							</label>
+							<label class="radio-inline"><input type="radio" name="icon" value="minibar.png">
+							<img width="24" height="24" src="{{asset('/images/commodites_icon/minibar.png')}}" class="loaded">	
+							</label>
+
+							</label>
+							<label class="radio-inline"><input type="radio" name="icon" value="sechoir_cheveux.png">
+							<img width="24" height="24" src="{{asset('/images/commodites_icon/sechoir_cheveux.png')}}" class="loaded">	
+							</label>
+
+							</label>
+							<label class="radio-inline"><input type="radio" name="icon" value="television.png">
+							<img width="24" height="24" src="{{asset('/images/commodites_icon/television.png')}}" class="loaded">	
+							</label>
+
 						</div>
 					</div>
 
