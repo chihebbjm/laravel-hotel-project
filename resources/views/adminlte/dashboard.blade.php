@@ -115,9 +115,10 @@ desired effect
               <!-- Menu Body -->
               <li class="user-body">
                 <div class="row">
-                  <div class="col-xs text-center">
+                  <di class="col-3"></di>
+                  <div class="col-6 text-center">
 
-                    <button href="{{ route('logout') }}"
+                    <button class="btn btn-primary" href="{{ route('logout') }}"
                     onclick="event.preventDefault();
                              document.getElementById('logout-form').submit();">
                     <i class="fa fa-sign-out" aria-hidden="true">
@@ -131,6 +132,7 @@ desired effect
                 </form>
 
                   </div>
+                  <di class="col-3"></di>
                  
                 </div>
                 <!-- /.row -->
