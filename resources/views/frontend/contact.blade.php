@@ -42,32 +42,30 @@
 					Houmt Souk, Zone Touristique, Djerba 4128, Tunisie
 					L’établissement Radisson Blu Palace Resort & Thalasso, Djerba est un hôtel emblématique, élégant et sophistiqué jouissant d’une situation idéale. Il se situe à une courte distance à pied des plages de sable blanc de la mer Méditerranée et d’un paisible lagon offrant des vues à couper le souffle. Vous profiterez sans aucun doute d’un séjour inoubliable grâce à un cadre idéal en plus des nombreuses installations luxueuses de l’établissement.
 				</span>
-				<p TEL : 01.43.38.03.23 PORTABLE (urgence) : 06.61.83.51.65 email : plomberiedaniel@hotmail.fr</p>
-				<p style="margin-bottom: 50px;margin-top: 20px;">ADRESSE : PLOMBERIE DANIEL
-					99 rue saint-maur
-					75011 paris</p>
+				<p style="margin-bottom: 50px;margin-top: 20px;"></p>
 				<h3 class="h3 card--info__title mb-4" style="color: tomato; margin:20px">Contact général</h3>
 
 				<div class="card card--info">
 
 					<ul class="list">
 
-						<li class="d-flex mb-3">
-								<ul class="list ml-3">
-						<li><label class="color-mako font-light align-top" href="tel:+216 75 75 76 00" data-di-id="di-id-5cb99cd7-95d020b7"><span data-test="t-phone">+216 75 75 76 00</span></label></li>
-						</ul>
-							</li>
-						<li class="d-flex mb-3">
-									<ul class="list ml-3">
-							<li><label class="text-underline font-light align-top" href="mailto:info.palace.djerba@radissonblu.com" data-test="t-email" data-di-id="di-id-7f18c2c5-1a6ec5aa">info.palace.djerba@radissonblu.com</label></li>
-							</ul>
-								</li>
-							<li class="d-flex mb-3">
-									<ul class="list ml-3">
-							<li><label class="color-mako font-light align-top" data-test="t-fax">+216 75 75 76 01</label></li>
-							</ul>
-								</li>
-							</ul>
+						
+						
+						<li>
+							<label class="text-underline font-light align-top" href="mailto:info.palace.djerba@radissonblu.com" data-test="t-email" data-di-id="di-id-7f18c2c5-1a6ec5aa"><i class="fa fa-envelope-o" aria-hidden="true"></i>
+ 								info.palace.djerba@radissonblu.com</label></li>
+
+						</li>
+						<li>
+							<label class="color-mako font-light align-top" href="tel:+216 75 75 76 00" data-di-id="di-id-5cb99cd7-95d020b7"><span data-test="t-phone">
+								<i class="fa fa-phone" aria-hidden="true"></i>
+								+216 75 75 76 00</span></label></li>
+
+						</li>
+					
+						
+					</ul>
+
 				</div>
 				
 			</div>
@@ -141,65 +139,6 @@
 
 
 
-
-
-
-<!-- 
-	<div class="row">
-		<div class="col-lg-12">
-			<div class="pull-left">
-				<h3> Contact Form  </h3>
-			</div>
-			
-		</div>
-	</div>
-
-	
-<div class="row" style="padding-top: 10px">
-	<div class="col-md-8">
-	@if($message = Session::get('success'))
-	<div class="alert alert-success" style="margin:50px">
-		<p> {{ $message }} </p>
-	</div>
-	@endif
-	</div>
-</div>
-
-	
-
-	<form action="{{ route('contact.store') }}" method="POST">
-		@csrf
-		<div class="row">
-			<div class="col-lg-12">
-				<div class="form-group">
-					<strong>nom:</strong>
-					<input type="text" name="nom" class="form-control" placeholder="nom">
-				</div>
-			</div>
-
-			<div class="col-lg-12">
-				<div class="form-group">
-					<strong>email</strong>
-					<textarea name="email" placeholder="description" class="form-control"></textarea>
-				</div>
-			</div>
-
-			<div class="col-lg-12">
-				<div class="form-group">
-					<strong>message</strong>
-					<textarea name="message" placeholder="description" class="form-control"></textarea>
-				</div>
-			</div>
-		
-			<div class="col-lg-12">
-				
-				<button type="submit" class="btn btn-primary">Submit</button>
-			</div>
-		</div>
-	</form>
-
-
--->
 
 
 

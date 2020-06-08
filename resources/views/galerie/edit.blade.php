@@ -56,9 +56,9 @@
 					<label>Tag:</label>
 					<select name="tag" id="pet-select" class="form-control">
 						<option value="activites">Activites</option>
-						<option value="restaurant">Restaurant</option>
-						<option value="tennis">Tennis</option>
-						<option value="vue mer">Vue mer</option>
+								<option value="restaurant">Restaurant</option>
+								<option value="suite">Suite</option>
+								<option value="vue-mer">Vue mer</option>
 					</select>
 				</div>
 			</div>

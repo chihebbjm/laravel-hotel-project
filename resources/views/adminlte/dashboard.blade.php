@@ -289,6 +289,7 @@ desired effect
 
 <script>
 
+
   $('#detailsmodal').on('show.bs.modal',function (event){
     var button = $(event.relatedTarget)
     //data-email in the  button to open modal :

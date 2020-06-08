@@ -10,7 +10,9 @@
 <link href="{{ asset('frontend/css/fancybox/jquery.fancybox.css')}}" rel="stylesheet"> 
 <link href="{{ asset('frontend/css/flexslider.css')}}" rel="stylesheet" />
 <link href="{{ asset('frontend/css/style.css')}}" rel="stylesheet" />
- 
+ <style>
+
+ </style>
 <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
 <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -23,7 +25,7 @@
     <div class="row">
       <div class="col-md-12">
         <p class="pull-left hidden-xs"><i class="fa fa-phone"></i> RÉSERVATIONS: +33 182884320 </p>
-        <p class="pull-right"> FAQ </p>
+        <p class="pull-right"> © 2020 Radisson Hotel Group FAQ </p>
       </div>
     </div>
   </div>
@@ -42,7 +44,10 @@
                 </div>
                 <div class="navbar-collapse collapse ">
                     <ul class="nav navbar-nav">
-						<li><a href="{{ url('/home')}}">Home</a></li> 
+						
+						<li><a href="{{ url('/contact')}}">contact</a></li> 
+						<li><a href="{{ url('/galeries')}}">galerie</a></li> 
+
 						<!--
 						 <li class="dropdown">
                         <a href="#" data-toggle="dropdown" class="dropdown-toggle">About Us <b class="caret"></b></a>
@@ -84,34 +89,34 @@
 				</div>
 			</div>
 		
-			<div class="col-6 col-md-10 col-lg-11 hotel-address d-flex flex-column justify-content-center">
-				<div class="col-3">
+			<div class="col-6 col-md-10 col-lg-11">
+				<div class="row justify-content-md-center">
 
-				</div>
-				<div class="col-3 col-lg-3 justify-content-center">
+			
+				<div class="col-6 col-lg-6 justify-content-center" >
 						<img  width="200px" height="50px" src="{{ asset('/frontend/img/spo/logo-spo.png')}}" class="user-image" alt="User Image">
 
 					</div>
-				   <div class="col-3 col-lg-3 justify-content-center">
-					<img   width="200px" height="50px" src="{{ asset('/frontend/img/spo/groupe-spo.png')}}" class="user-image" alt="User Image">
+				   <div class="col-6 col-lg-6 justify-content-center">
+					<img   width="200px" height="50px" src="{{ asset('/frontend/img/spo/logo-spo2.png')}}" class="user-image" alt="User Image">
 
 					</div>
-					<div class="col-3">
-
-					</div>
+				
+					
 				</div>
+			</div>
 			
 		</div>
 	</div>
 	<div id="sub-footer">
 		<div class="container">
 			<div class="row">
+				
 				<div class="col-lg-6">
 					<div class="copyright">
 						<p>
-							<span>© 2020 Radisson Hotel Group. Tous droits réservés. RHG Radisson Hotel Group, Radisson, Radisson RED, Radisson Blu, Park Plaza,
-								 Park Inn, Country Inn & Suites, Radisson Rewards et Radisson Meetings sont des
-								  marques déposées à l’U.S.</span>
+							<span>Tous droits réservés. RHG Radisson Hotel Group, Radisson, Radisson RED, Radisson Blu, Park Plaza,
+								 Park Inn, Country Inn & Suites, Radisson Rewards et Radisson Meetings sont des marques déposées à l’U.S.</span>
 						</p>
 					</div>
 				</div>
@@ -145,7 +150,5 @@
 <script src="{{ asset('frontend/js/animate.js') }}"></script>
 <script src="{{ asset('frontend/js/custom.js') }}"></script>
 
- <script src="{{ asset('frontend/contact/jqBootstrapValidation.js') }}"></script>
- <script src="{{ asset('frontend/contact/contact_me.js') }}"></script>
 </body>
 </html>

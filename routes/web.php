@@ -36,24 +36,37 @@ Route::resource('chambres', 'ChambresController');
 Route::resource('slider', 'SliderController');
 
 
-Route::resource('galerie', 'GalerieController');
+
+
+
+Route::resource('galerie', 'GalerieAdminController');
+//Route::get('/galeries', '@index')->name('galeries');
+Route::get('/galeries','GalerieClientController@index')->name('galeries');
+
+
 
 
 //contact for admin (ContactAdminController) ==> auth
 Route::get('/contact-admin', 'ContactAdminController@index')->name('contact-admin');
-
 //contact for clinet (ContactClientController)
 Route::resource('contact', 'ContactClientController');
 //Route::get('/contact', 'ContactClientController@create')->name('contact');
 
 
 
+
 //contact for admin (ContactAdminController) ==> auth
 Route::get('reservation-admin', 'ReservationAdminController@index')->name('reservation-admin');
-
 //contact for clinet (ContactClientController)
 Route::resource('reservation', 'ReservationClientController');
 
 
 
 
+
+
+// home URl (frontend):
+
+//contact ==>  /contact
+
+//galerie ==> 

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Galerie;
 use Illuminate\Http\Request;
 
-class GalerieController extends Controller
+class GalerieAdminController extends Controller
 {
     
     

@@ -9,6 +9,32 @@ Note: Licence under Creative Commons Attribution 3.0
 @import url('font-awesome.css');  
 @import url('animate.css');
 
+
+
+/* my add css start here */
+
+
+#myTab {
+    display: inline-block;
+}
+h3#title{
+	color: #7CB4EF
+}
+p#pragphe{
+	margin-top: 40px;
+	margin-bottom:40px;
+}
+section#title {
+	color: #7CB4EF
+}
+footer {
+    text-align: center;
+}
+
+
+/* my add css end here */
+
+
 body {
 	font-family:'Open Sans', Arial, sans-serif;
 	font-weight:300;
@@ -168,7 +194,7 @@ img.img-polaroid {
 }
 .topbar p > i{
 	margin-right:5px;
-	color: #cddc39;
+	color: rgb(50, 157, 219);
 }
 .topbar p:last-child{
 	text-align:right;
@@ -724,7 +750,7 @@ section.hero-text h1{
     margin-top: -46px;
 }
 #inner-headline h2.pageTitle{
-	color: rgb(22, 22, 22);
+	color: #545D74;
 	padding: 5px 0;
 	display:block;
 	text-transform: uppercase;
@@ -1854,6 +1880,44 @@ padding-top: 3px;
 		height:20px;
 		font-size:14px;
 	}
+
+
+
+
+/* this the style copied of the galery-1.css */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 }

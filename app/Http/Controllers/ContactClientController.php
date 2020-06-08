@@ -17,7 +17,7 @@ class ContactClientController extends Controller
      */
     public function index()
     {
-        return view('contact.create');
+        return view('frontend.contact');
     }
 
 
