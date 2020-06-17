@@ -78,7 +78,7 @@
 			<div class="col-md-12" style="margin-bottom: 20px">
 				<div class="form-group">
 					<strong>Prix_pax :</strong>
-					<input type="number" name="prix_pax" placeholder="{{ $chambre->prix_pax }}" class="form-control"></textarea>
+					<input type="number" value="{{ $chambre->prix_pax }}" name="prix_pax" placeholder="prix" class="form-control"></textarea>
 				</div>
 			</div>
 
@@ -90,7 +90,7 @@
 				@foreach($commodites as $key => $commodite)
 				<div class="form-check form-check-inline">	
 					<label class="radio-inline"><input class="form-check-input" type="checkbox" name="commodites_icon[]"  value="{{$commodite->id}}">
-						<img width="24" height="24" src="/images/{{ $commodite->icon }}" class="loaded">
+						<img width="24" height="24" src="/images/commodites_icon/{{ $commodite->icon }}" class="loaded">
 						</label>
 					<label>	{{$commodite->nom}}</label>	
 				</div>

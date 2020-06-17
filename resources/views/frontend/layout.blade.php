@@ -40,25 +40,18 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                  <a class="navbar-brand" href="{{ url('/home')}}"><img width="200px" height="50px" src="{{ asset('/frontend/img/logo/logo.png')}}" alt="logo"/></a>
+                  <a class="navbar-brand" href="{{ url('/')}}"><img width="200px" height="50px" src="{{ asset('/frontend/img/logo/logo.png')}}" alt="logo"/></a>
                 </div>
                 <div class="navbar-collapse collapse ">
                     <ul class="nav navbar-nav">
-						
-						<li><a href="{{ url('/contact')}}">contact</a></li> 
+						<li><a href="{{ url('/')}}">accueil</a></li> 
+						<li><a href="{{ url('/chambre')}}">chambres</a></li> 
+						<li><a href="{{ url('/reservation')}}">reservation</a></li> 
 						<li><a href="{{ url('/galeries')}}">galerie</a></li> 
+						<li><a href="{{ url('/contact')}}">contact</a></li> 
 
-						<!--
-						 <li class="dropdown">
-                        <a href="#" data-toggle="dropdown" class="dropdown-toggle">About Us <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="{{ url('#')}}">Company</a></li>
-                            <li><a href="{{ url('#')}}">Our Team</a></li>
-                            <li><a href="{{ url('#')}}">News</a></li> 
-                            <li><a href="{{ url('#')}}">Investors</a></li>
-                        </ul>
-					</li> 
-					 -->
+						
+				
 						
                     </ul>
                 </div>
@@ -149,6 +142,57 @@
 <script src="{{ asset('frontend/js/jquery.magnific-popup.min.js') }}"></script>
 <script src="{{ asset('frontend/js/animate.js') }}"></script>
 <script src="{{ asset('frontend/js/custom.js') }}"></script>
+
+
+
+
+
+<script>
+
+
+	$('#detailsmodalchambre').on('show.bs.modal',function (event){
+	  var button = $(event.relatedTarget)
+	  //data-email in the  button to open modal :
+	  var nom =button.data('nom')
+	  var description =button.data('description')
+	  var prix =button.data('prix')
+	  var image=button.data('image')
+	
+	  var modal = $(this)
+	  //the id of the input  (#email)
+	  modal.find('.modal-body #nom').val(nom);
+	  modal.find('.modal-body #description').val(description);
+	  modal.find('.modal-body #prix').val(prix);
+	  modal.find('.modal-body #image').attr("src","images/"+image);
+  
+  
+	})
+  
+  </script>
+
+
+<script>
+
+
+	$('#detailsmodalgalerie').on('show.bs.modal',function (event){
+	  var button = $(event.relatedTarget)
+	  //data-email in the  button to open modal :
+	  
+	  var image=button.data('image')
+	  var titre=button.data('titre')
+	  var modal = $(this)
+	  //the id of the input  (#email)
+	 
+	  modal.find('.modal-body #image').attr("src","images/"+image);
+	  modal.find('.modal-body #titre').val(titre);
+
+  
+	})
+  
+  </script>
+
+
+
 
 </body>
 </html>

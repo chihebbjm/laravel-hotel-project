@@ -157,6 +157,8 @@ class GalerieAdminController extends Controller
                 'tag' => 'required'
                 
             ]);
+            $image_name =$galerie->image;
+
         }
 
         //UPDATE :

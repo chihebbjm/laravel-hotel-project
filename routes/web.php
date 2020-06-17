@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 Route::resource('products', 'ProductController');
 
@@ -23,18 +21,22 @@ Auth::routes();
 Route::get('/dashboard', 'DashboardController@index')->name('dashbaord');
 
 
-Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/', 'HomeController@index')->name('home');
 
 
 
 Route::resource('commodites', 'CommoditesController');
 
 
-Route::resource('chambres', 'ChambresController');
+
 
 
 Route::resource('slider', 'SliderController');
 
+
+Route::resource('chambres', 'ChambresAdminController');
+Route::get('chambre','ChambresClientController@index')->name('chambre');
 
 
 

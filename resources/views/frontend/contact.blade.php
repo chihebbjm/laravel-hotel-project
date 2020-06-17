@@ -34,10 +34,10 @@
 	<div class="row" >
 		<div class="col-md-12" >
 			<div class="about-logo">
-				<h4>
+				<h3 id="title">
 					Accès au Radisson Blu Palace Resort & Thalasso, Djerba
 
-				</h4>
+				</h3>
 				<span>
 					Houmt Souk, Zone Touristique, Djerba 4128, Tunisie
 					L’établissement Radisson Blu Palace Resort & Thalasso, Djerba est un hôtel emblématique, élégant et sophistiqué jouissant d’une situation idéale. Il se situe à une courte distance à pied des plages de sable blanc de la mer Méditerranée et d’un paisible lagon offrant des vues à couper le souffle. Vous profiterez sans aucun doute d’un séjour inoubliable grâce à un cadre idéal en plus des nombreuses installations luxueuses de l’établissement.
@@ -109,11 +109,7 @@
 							</div><!-- form group end -->
 							</center>
 						</div><!-- column end -->
-						<div class="col-md-3 align-self-center">
-							<center>
-								<button type="submit" class="btn btn-primary btn-lg">annule</button>
-							</center>
-						</div>
+					
 					</form>
 					</div><!-- row end -->
 				</div><!-- form end -->

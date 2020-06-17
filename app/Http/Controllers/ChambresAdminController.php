@@ -8,7 +8,7 @@ use App\Commodites;
 
 use Illuminate\Http\Request;
 
-class ChambresController extends Controller
+class ChambresAdminController extends Controller
 {
    
    
@@ -150,7 +150,8 @@ class ChambresController extends Controller
             'description' => 'required',
             'status' => 'required',
             'image' =>'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'prix_pax'=>'required'
+            'prix_pax'=>'required',
+            'commodites_icon'=>'required'
         ]);
         $image_name = rand() . '.' . $image->getClientOriginalExtension();
         $image->move(public_path('images'), $image_name);
@@ -164,8 +165,10 @@ class ChambresController extends Controller
                 'type'=>'required',
                 'description' => 'required',
                 'status' => 'required',
-                'prix_pax'=>'required'
+                'prix_pax'=>'required',
+                'commodites_icon'=>'required'
             ]);
+            $image_name =$chambre->image;
         }
 
         //UPDATE :

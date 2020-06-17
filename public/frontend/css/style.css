@@ -13,23 +13,129 @@ Note: Licence under Creative Commons Attribution 3.0
 
 /* my add css start here */
 
+button#btn-card {
+	color: #d9534f;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
 
 #myTab {
     display: inline-block;
 }
 h3#title{
-	color: #7CB4EF
+	color: #81B5F1
 }
 p#pragphe{
 	margin-top: 40px;
 	margin-bottom:40px;
+	font-size: medium;
 }
 section#title {
-	color: #7CB4EF
+	color: #2777cc
 }
 footer {
     text-align: center;
 }
+
+a.btn.btn-icon-link {
+    background: none;
+    border-color: snow;
+}
+
+h3.h3.card__title {
+    font-size: medium;
+}
+
+
+.row.reservation-content {
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.row.alert{
+	background-color: #00A65A;
+	margin: 40px;
+	text-align: center;
+}
+
+
+div#commodite-lien {
+	display: inline-block;
+	margin-top: 30px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+
+label#commodite-icon {
+
+	padding: 10px;
+	font-size: small;
+}
+.form-group{
+	margin-bottom: 5px;
+}
+
+
+
+label.text-chambre {
+	text-align: center;
+    font-size: large;
+    color: rgb(48, 48, 48);
+}
+
+h3#header-card {
+	color: #ee8572;
+    padding-bottom: 50px;
+}
+
+
+
+
+
+
+.contact-form {
+	
+	background: #ffffff;
+	padding: 65px 50px;
+	box-shadow: 0px 0px 30px 0px rgba(0,0,0,.5);
+	border-radius: 7px;
+	z-index: 100;
+	position: relative;
+}
+
+.contact-form .form-control {
+	border-bottom: solid 1px #cdcfd7;
+	border-radius: 0;
+	box-shadow: none;
+
+}
+
+.contact-form.wow.fadeInUp {
+
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.row.reservation-content {
+    margin-left: 80px;
+    margin-right: 80px;
+}
+
+div#full-content {
+  /* The image used */
+  background-image: url("/frontend/img/cover/reservation-bg.jpg");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
 
 
 /* my add css end here */
@@ -419,6 +525,7 @@ ul.nav li.dropdown a {
 	display:none;
 }
 .pageTitle{
+	text-align: center;
 color: #fff;
 margin: 30px 0 3px;
 display: inline-block;
@@ -446,12 +553,12 @@ display: inline-block;
 }
 
 .content-3-10 .image-container .background-image-holder {
-	background: url('../img/service1.jpg') no-repeat center center;
+	background: url('../../frontend/img/slides/radissoun_bleu.jpg') no-repeat center center;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
-	height: 94%;
+	height: 92%;
 	overflow: hidden;
 }
 
@@ -738,7 +845,7 @@ section.hero-text h1{
 /* page headline
 ==================================== */
 
-#inner-headline{background: url('../img/img01.jpg') center -294px no-repeat;margin: 0;background-size: cover;padding: 36px 0;position: relative;width: 100%;}
+#inner-headline{background: url('../img/cover/cover1.jpg') center -294px no-repeat;margin: 0;background-size: cover;padding: 36px 0;position: relative;width: 100%;}
 
 #inner-headline:before {
     content: '';
@@ -750,7 +857,7 @@ section.hero-text h1{
     margin-top: -46px;
 }
 #inner-headline h2.pageTitle{
-	color: #545D74;
+	color: #fafafa;
 	padding: 5px 0;
 	display:block;
 	text-transform: uppercase;
@@ -1891,6 +1998,16 @@ padding-top: 3px;
 
 
 
+
+
+
+
+
+
+
+
+
+/*custom css for from reserviation */
 
 
 

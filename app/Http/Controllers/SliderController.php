@@ -148,6 +148,8 @@ class SliderController extends Controller
                 'description' => 'required'
                 
             ]);
+            $image_name =$slider->image;
+
         }
 
         //UPDATE :

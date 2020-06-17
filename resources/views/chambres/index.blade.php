@@ -80,8 +80,8 @@
 								<div class="radio-lien">
 								<img width="24" height="24" src="/images/commodites_icon/{{ $one_commodites->icon }}" class="loaded">
 								<label class="label label-default">{{ $one_commodites->nom }}</label>
+								</div>
 							</div>
-					</div>
 
 					@endforeach
 				</div>
@@ -201,11 +201,11 @@
 						<div class="form-group">
 						  <label>Select</label>
 						  <select class="form-control" name="type">
-							<option value="chambre réguliere">Chambre régulière</option>
-							<option value="chambre familiale">Chambre familiale</option>
+							<option value="chambre-reguliere">Chambre régulière</option>
+							<option value="chambre-familiale">Chambre familiale</option>
 							<option value="suite">Suite</option>
-							<option value="chambres communicantes">Chambres communicantes</option>
-							<option value="chambres voisines">Chambres voisines</option>
+							<option value="chambres-communicantes">Chambres communicantes</option>
+							<option value="chambres-voisines">Chambres voisines</option>
 						  </select>
 						</div>
 					  </div>

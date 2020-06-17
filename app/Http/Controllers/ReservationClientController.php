@@ -18,7 +18,7 @@ class ReservationClientController extends Controller
      */
     public function index()
     {
-        return view('reservation.create');
+        return view('frontend.reservation');
     }
 
 
@@ -47,18 +47,7 @@ class ReservationClientController extends Controller
                            
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Product  $product
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Reservation $reservation)
-    {
-        return view('reservation.show', compact('reservation'));
-    }
-
-
+ 
 
 
 }
