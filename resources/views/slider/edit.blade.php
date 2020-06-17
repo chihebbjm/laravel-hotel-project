@@ -1,6 +1,19 @@
-@extends('adminlte.dashboard')
+@extends('admin.layouts.app')
+
+@section('title','Edit Reservation')
+
+@push('css')
+
+@endpush
+
 @section('content')
-	
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+       
+        <!-- Main content -->
+        <div class="content">
+
+
 
 <div class="card-body bg-light" style="padding-top:50px">
 	<div class="card" style="margin-right:40px;margin-left:40px;">
@@ -85,13 +98,16 @@
 
   
 
-
-
+            
+            
+</div>
+<!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
 @endsection
 
-
-
-
+@push('scripts')
+@endpush
 
 
 

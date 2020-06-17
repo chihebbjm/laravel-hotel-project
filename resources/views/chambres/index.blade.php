@@ -1,6 +1,21 @@
-@extends('adminlte.dashboard')
+@extends('admin.layouts.app')
+
+@section('title','Chambre')
+
+@push('css')
+
+@endpush
+
 @section('content')
-	
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+       
+        <!-- Main content -->
+        <div class="content">
+
+
+
+
 
 <div class="row" style="padding-top: 40px">
 	<div class="col-md-8">
@@ -11,62 +26,66 @@
 	@endif
 	</div>
 </div>
-<!-- 
-<h3>
-	@foreach($chambres_dispo as $key => $disponible)
-	<label>
-		{{$disponible->id}}
-	</label>
-	<label>
-		{{$disponible->nom}}
-	</label>
-	<label>
-		{{$disponible->status}}
-	</label>
-	@endforeach
-</h3>
--->
 
 <div class="card-body">
 <div class="card" style="margin-right:40px;margin-left:40px;">
-<table id="example2" class="table table-bordered"  aria-describedby="example2_info">
+
+	
+<div class="row" style="margin:10px">
+	<div class="col-md-8">
+
+		<div class="pull-left" style="margin-left: 20px">
+			<button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+					
+					<i class="fa fa-plus" aria-hidden="true"> Chambres
+					</i>
+					</button>
+		</div>
+	</div>
+</div>
+
+
+<table id="example2" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
 
 
 
 
-<tr class="table">
+<tr >
 		<th>Image</th>
 		<th> No </th>
-		<th> nom </th>
-		<th> description </th>
-		<th> prix_pax </th>
-		<th> commodites</th>
-		<th> status</th>
-		<th> action </th>
+		<th> Status </th>
+		<th> Nom </th>
+		<th> Description </th>
+		<th> Prix_pax</th>
+		<th> Commodites</th>
+		<th> Type</th>
+		<th> Action </th>
 	</tr>
 	@foreach($chambres as $key => $chambre)
-	<tr class="table-light">
-			<td>
+	<tr >
+			<td style="width: 60px">
 				<img width="100" height="100" src="/images/{{ $chambre->image }}" class="loaded" alt="icon" >
 			</td>
 			<td style="text-align: center; vertical-align: middle;" > 
-				{{ ++$i }} 
+				
 			</td>
-			<td style="vertical-align: middle;" > 
+			<td style="vertical-align: middle;width: 50px" > 
 				@if($chambre->status =='disponible')         
-				<label class="btn btn-success"> {{ $chambre->status }} </label>	
+				<label 
+				name=""
+				class="btn btn-success"> {{ $chambre->status }} </label>	
 				@else
 				<label class="btn btn-warning"> {{ $chambre->status }} </label>	
 				@endif
 			</td>
 		
-			<td style="text-align: center; vertical-align: middle;" > 
+			<td style="text-align: center; vertical-align: middle;width: 60px" > 
 				{{ $chambre->nom }} 
 			</td>
-			<td style="text-align: center; vertical-align: middle;" > 
+			<td style="text-align: center; vertical-align: middle;width: 200px"  > 
 				 {{ $chambre->description }} 
 			</td>
-			<td style="text-align: center; vertical-align: middle;" > 
+			<td style="text-align: center; vertical-align: middle;width: 50px" > 
 				 {{ $chambre->prix_pax }} 
 			</td>
 			<td style="text-align: center; vertical-align: middle;">
@@ -87,6 +106,9 @@
 				</div>
 			
 			</td>
+			<td style="text-align: center; vertical-align: middle;width: 50px" > 
+				{{ $chambre->type }} 
+		   </td>
 			<td style="text-align: center; vertical-align: middle;" > 
 				<form action="{{ route('chambres.destroy', $chambre->id) }}" method="POST">
 					<a class="btn btn-primary" href="{{ route('chambres.edit', $chambre->id) }}">Edit</a>
@@ -94,27 +116,28 @@
 					@method('DELETE')
 					<button type="submit" class="btn btn-danger">Delete</button>
 				</form>
+ 
+				<form  action="{{route('chambredep',$chambre->id)}}" method="GET" >
+					@csrf
+					<button type="submit" class="btn btn-info">Status</button>
+				</form>
+
+
 			</td>
 			
 		</tr>
 	@endforeach
 </table>
 
-
-
-
-<div class="row" style="margin:10px">
-	<div class="col-md-8">
-
-		<div class="pull-left" style="margin-left: 20px">
-			<button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-					
-					<i class="fa fa-plus" aria-hidden="true"> Chambres
-					</i>
-					</button>
-		</div>
-	</div>
+<div id="pagintion" class="row-pull-right" >
+	<div class="pull-right" style="margin-left: 20px">
+		<div class="pull-right">{{ $chambres->links() }}</div>
+	
 </div>
+</div>
+
+
+
 
 
 
@@ -255,9 +278,18 @@
 	</div>
   </div>
 
+ 
 
 
-
-  <!-- Edit Modal -->
-
+		 
+  
+  
+            
+            </div>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
 @endsection
+
+@push('scripts')
+@endpush

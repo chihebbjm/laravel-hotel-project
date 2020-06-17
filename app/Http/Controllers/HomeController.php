@@ -17,7 +17,7 @@ class HomeController extends Controller
     public function index()
     {
 
-        $slider=Slider::latest()->paginate(5);
+        $slider=Slider::get();
         $chambres_dispo= Chambres::where('status',"disponible")->get();
         //$chambres = Chambres::latest()->paginate(5);
         //$commodites = Commodites::latest()->paginate(5);

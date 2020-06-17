@@ -29,7 +29,7 @@ class ReservationAdminController extends Controller
      */
     public function index()
     {
-        $reservation = Reservation::latest()->paginate(5);
+        $reservation = Reservation::paginate(5);
         return view('reservation.index', compact('reservation'))->with('i', (request()->input('page', 1) - 1) * 5);
     
     }

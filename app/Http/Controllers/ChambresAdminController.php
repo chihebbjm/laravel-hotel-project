@@ -33,9 +33,9 @@ class ChambresAdminController extends Controller
     
    public function index()
     {
-       $chambres_dispo= Chambres::where('status',"disponible")->get();
-       $chambres = Chambres::latest()->paginate(5);
-       $commodites = Commodites::latest()->paginate(5);
+       $chambres_dispo= Chambres::where('status',"disponible")->paginate(5);
+       $chambres = Chambres::paginate(5);
+       $commodites = Commodites::paginate(5);
        return view('chambres.index', compact('chambres','commodites','chambres_dispo'))->with('i', (request()->input('page', 1) - 1) * 5);
   
     }
@@ -117,13 +117,40 @@ class ChambresAdminController extends Controller
      */
     public function edit(Chambres $chambre)
     {
-        $commodites = Commodites::latest()->paginate(5);
+        $commodites = Commodites::get();
         return view('chambres.edit', compact('chambre','commodites'));
     }
 
 
+     /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
 
+     //THIS FUNCTION BUILD BY HAYTHEM XD :
+    public function update_dispo(Request $request,$id)
+    {
+        
+        $id=$request->id;
+        //$disp=$request->status;
+        //Chambres::find($id)->update(['status' => 'occupe']);
 
+      
+
+        $disp=Chambres::find($id)->status;
+           if($disp=='disponible'){
+            Chambres::find($id)->update(['status' => 'occupe']);
+           }
+            else
+           {  Chambres::find($id)->update(['status' => 'disponible']);;
+
+           }
+
+           return redirect()->route('chambres.index');
+
+    }
     
     /**
      * Update the specified resource in storage.

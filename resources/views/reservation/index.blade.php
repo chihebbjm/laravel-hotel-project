@@ -1,6 +1,21 @@
-@extends('adminlte.dashboard')
+@extends('admin.layouts.app')
+
+@section('title','Reservation')
+
+@push('css')
+
+@endpush
+
 @section('content')
-	
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+       
+        <!-- Main content -->
+        <div class="content">
+
+
+
+
 
 
 <div class="card-body">
@@ -9,7 +24,7 @@
 	
 
 		
-<tr class="table">
+<tr>
 	
 		<th> No </th>
 		<th> nom </th>
@@ -18,7 +33,7 @@
 		<th>details</th>
 	</tr>
 	@foreach($reservation as $key => $info)
-	<tr class="table-light">
+	<tr>
 			
 			<td> {{ ++$i }} </td>
 			<td> {{ $info->nom }} </td>
@@ -41,6 +56,13 @@
 		</tr>
 	@endforeach
 </table>
+
+<div id="pagintion" class="row-pull-right" >
+	<div class="pull-right" style="margin-left: 20px">
+		<div class="pull-right">{{ $reservation->links() }}</div>
+	
+</div>
+</div>
 
 
 
@@ -128,7 +150,13 @@
 
 
 
-
-  <!-- Edit Modal -->
-
+            
+            
+</div>
+<!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
 @endsection
+
+@push('scripts')
+@endpush

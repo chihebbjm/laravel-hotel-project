@@ -53,7 +53,7 @@
 
 			<div class="col-md-6" style="margin-bottom: 20px">
 				<div>
-				<label>Date d'arrivee</label>
+				<label id="label-contact">Date d'arrivee</label>
 
 				<div class="date">
 				  <input type="date" name="date_arrivee"class="form-control" id="datepicker">
@@ -65,7 +65,7 @@
 
 			<div class="col-lg-6" style="margin-bottom: 20px">
 				<div class="form-group">
-					<label>Date depart</label>
+					<label id="label-contact">Date depart</label>
 	
 					<div class="date">
 					  <input type="date" name="date_depart" class="form-control pull-right" id="datepicker">
@@ -77,14 +77,14 @@
 
 				<div class="col-md-6" style="margin-bottom: 20px">
 					<div class="form-group">
-						<strong>Nom</strong>
+						<label id="label-contact">Nom</label>
 						<input type="text" name="nom" class="form-control" placeholder="nom">
 					</div>
 				</div>
 	
 				<div class="col-md-6" style="margin-bottom: 20px">
 					<div class="form-group">
-						<strong>Prenom</strong>
+						<label id="label-contact">Prenom</label>
 						<input name="prenom" placeholder="prenom" class="form-control"></textarea>
 					</div>
 				</div>
@@ -92,21 +92,21 @@
 			
 				<div class="col-md-6" style="margin-bottom: 20px">
 					<div class="form-group">
-						<strong>Telephone</strong>
+						<label id="label-contact">Telephone</label>
 						<textarea name="telephone" type="number" placeholder="telephone" class="form-control"></textarea>
 					</div>
 				</div>
 				
 				<div class="col-md-6" style="margin-bottom: 20px">
 					<div class="form-group">
-						<strong>Email</strong>
+						<label id="label-contact">Email</label>
 						<textarea name="email" type="text" placeholder="email" class="form-control"></textarea>
 					</div>
 				</div>
 	
 				<div class="col-md-6" style="margin-bottom: 20px">
 					<div class="form-group">
-						<label>Number d'adultes :</label>
+						<label id="label-contact">Number d'adultes :</label>
 						<select name="nb_adultes" id="pet-select" class="form-control">
 							<option value="0">0</option>
 							<option value="1">1</option>
@@ -119,7 +119,7 @@
 
 				<div class="col-md-6" style="margin-bottom: 20px">
 					<div class="form-group">
-						<label>Number d'enfant</label>
+						<label id="label-contact">Number d'enfant</label>
 						<select name="nb_enfants" id="pet-select" class="form-control">
 							<option value="0">0</option>
 							<option value="1">1</option>
@@ -136,7 +136,7 @@
 
 			<div class="col-md-12">
 				<div class="form-group mt40">
-					<strong>Demandes supplémentaires</strong>
+					<label id="label-contact" >Demandes supplémentaires</label>
 					<textarea class="form-control" id="body" name="body" rows="5"  name="demande_supp" type="text" placeholder="demandes supplémentaires" ></textarea>
 				</div><!-- form group end -->
 			</div><!-- column end -->

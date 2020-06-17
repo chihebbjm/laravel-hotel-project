@@ -143,6 +143,7 @@
 			
 			data-nom="{{$chambre->nom}}"
 			data-description="{{$chambre->description}}"
+			data-type="{{$chambre->type}}"
 			data-prix="{{$chambre->prix_pax}}"
 			data-image="{{$chambre->image}}">
 
@@ -228,7 +229,7 @@
 	<div class="modal-content">
 		<div class="modal-header">
 		<h5 class="modal-title" id="exampleModalLabel">
-			<h3> Detaills </h3>
+			<h3 style="text-align: center"> Detaills </h3>
 		</h5>
 	
 		</div>
@@ -263,6 +264,14 @@
 						<div class="form-group">
 							<label>Prix</label>
 							<input  type="number" class="form-control form-control-lg" id="prix" readonly >
+				
+						</div>
+					</div>
+
+					<div class="col-lg-12" style="margin-bottom: 10px">
+						<div class="form-group">
+							<label>Type</label>
+							<input  type="text" class="form-control form-control-lg" id="type" readonly >
 				
 						</div>
 					</div>

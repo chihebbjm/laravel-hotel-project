@@ -37,6 +37,9 @@ Route::resource('slider', 'SliderController');
 
 Route::resource('chambres', 'ChambresAdminController');
 Route::get('chambre','ChambresClientController@index')->name('chambre');
+Route::get('chambre/{id}','ChambresAdminController@update_dispo')->name('chambredep');
+
+
 
 
 

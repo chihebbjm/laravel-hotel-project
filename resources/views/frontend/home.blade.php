@@ -24,22 +24,19 @@
               <li>
                 <div id="container" style="filter: blur(2px);">
                     <div style="background: #86abf0;">
-                        <img src="/images/{{ $image_slider->image }}" alt="Image" width="500px" height="750px"/>
+                        <img src="/images/{{ $image_slider->image }}" alt="Image" width="100%" height="800px"/>
                     </div>
                         
                     </div>
-                    <div class="flex-caption">
-                        <div classe="div_background" style="background:#797ae41c;padding: 5px;" >
-                                
-                                <h3 style="color: white;font-size: 80px;text-align: center;"> {{ $image_slider->titre }} </h3>
-                                <h3 style="color: white;font-size: 80px;text-align: center;"> {{ $image_slider->description }}</h3>
-        
-                                    
-
+                
+                     
+                        <div class="flex-caption">
+                            <h3>{{ $image_slider->titre }}</h3> 
+                            <p>{{ $image_slider->description }}</p> 
+                             
                         </div>
-                        
                                                      
-                        </div>
+                      
           </li>
              @endforeach
             </ul>
@@ -50,6 +47,10 @@
     
 
     
+
+
+    
+
 <section id="content" style="margin-bottom: 20px;margin-top:20px">
     <div class="container">
     
@@ -83,6 +84,7 @@
 
 
 
+    
     
     
     <div class="container" style="margin-bottom: 25px;margin-top:10px">
@@ -183,14 +185,15 @@
      @foreach($chambres_dispo as $key => $chambre)
      <div class="col-md-4 col-sm-6 col-xs-12 gallery-item-wrapper {{$chambre->type}} isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate3d(780px, 0px, 0px);">
          
-         <div class="gallery-item box-content" data-toggle="modal" data-target="#detailsmodalchambre"
+         <div class="gallery-item box-content" data-toggle="modal" data-target="#detailsmodalchambre" 
          
          data-nom="{{$chambre->nom}}"
          data-description="{{$chambre->description}}"
          data-prix="{{$chambre->prix_pax}}"
+         data-type="{{$chambre->type}}"
          data-image="{{$chambre->image}}">
 
-             <div class="gallery-thumb">
+             <div class="gallery-thumb" style="margin: 10px">
                  <img  src="/images/{{ $chambre->image }}"  class="img-responsive img-thumbnail" style="height: 224px; width: 338px" alt="3rd gallery Thumb">
                  <div class="image-overlay"></div>
              </div>
@@ -199,7 +202,7 @@
 
          
              <h3 id="header-card"><div class="price pull-left">{{$chambre->nom}} </div><span class="price pull-right">{{$chambre->prix_pax}} DT</span></h3>
-                 <label class="price pull-left">{{$chambre->description}}</label>  
+                 <p class="price pull-left">{{$chambre->description}}</p>  
          
                  <div class="row">
 
@@ -281,7 +284,7 @@
 
 					<div class="col-lg-12" style="margin-bottom: 10px">
 						<div class="form-group">
-							<label>Nom</label>
+							<label class="pull-left">Nom</label>
 							<input  type="text"  class="form-control form-control-lg" id="nom" readonly >
 				
 						</div>
@@ -289,7 +292,7 @@
 
 					<div class="col-lg-12" style="margin-bottom: 10px">
 						<div class="form-group">
-							<label>Description</label>
+							<label class="pull-left">Description</label>
 							<input  type="text" class="form-control form-control-lg" id="description" readonly >
 				
 						</div>
@@ -297,11 +300,19 @@
 
 					<div class="col-lg-12" style="margin-bottom: 10px">
 						<div class="form-group">
-							<label>Prix</label>
+							<label class="pull-left">Prix</label>
 							<input  type="number" class="form-control form-control-lg" id="prix" readonly >
 				
 						</div>
+                    </div>
+                    <div class="col-lg-12" style="margin-bottom: 10px">
+						<div class="form-group">
+							<label class="pull-left">Type</label>
+							<input  type="text" class="form-control form-control-lg" id="type" readonly >
+				
+						</div>
 					</div>
+				
 				
 				
 				
@@ -319,6 +330,8 @@
 </section>
 
     
+
+
 
 
 
@@ -365,6 +378,63 @@
     </div>
 
 
+
+    <div class="about home-about">
+        <div class="container">
+                <!-- changing this part into card with slider to show programme-->
+                <div class="row">
+                    
+                    <center> 
+                        <h3 id="title-home" style="text-align: center">Merci Pour Votre feedback
+                        <div class="lien"  style="text-align: center"><img src="frontend/img/home-icon/lien.svg" width="150px" height="40px"> </div>
+                   </h3></center>	
+                    
+                    <div class="col-md-6" style="margin-top: 20px;">
+                        <div class="block-heading-two">
+                        
+                        </div>	
+                             <div class="testimonials">
+                                <div class="active item">
+                                  <blockquote><p>Ce fut un plaisir de séjourner dans cette toute nouvelle propriété, à 5 minutes à pied du centre commercial. Radisson Blu Djerba  est un bel hôtel. Merci !</p></blockquote>
+                                  <div class="carousel-info">
+                                    <div style="text-align: center">
+                                        <span class="testimonials-name">Chers Client</span>
+                                    </div>
+                                  </div>
+                                </div>
+                            </div>
+                    </div>
+                    
+
+
+                            
+                    <div class="col-md-6" style="margin-top: 20px;">
+                            <div class="block-heading-two">
+                            
+                            </div>	
+                                 <div class="testimonials">
+                                    <div class="active item">
+                                      <blockquote><p>'hôtel est à 5 minutes à pied du point de départ de Mall Road. Les chambres sont propres, luxueuses et meublées de façon moderne. Merci !</p></blockquote>
+                                      <div class="carousel-info">
+                                        <div style="text-align: center">
+                                          <span class="testimonials-name">Chers Client</span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                </div>
+                        </div>
+
+
+
+                </div>
+                
+                                         
+                 
+                <br>
+             
+              </div>
+                
+            </div>
     
 
 

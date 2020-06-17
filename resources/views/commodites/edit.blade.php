@@ -1,8 +1,20 @@
-@extends('adminlte.dashboard')
+@extends('admin.layouts.app')
+
+@section('title','Edit Commodites')
+
+@push('css')
+
+@endpush
+
 @section('content')
-	
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+       
+        <!-- Main content -->
+        <div class="content">
 
 
+			
 <div class="card-body bg-light" style="padding-top:50px">
 	<div class="card" style="margin-right:40px;margin-left:40px;">
 	<div style="background: white">
@@ -73,9 +85,26 @@
 					<img width="24" height="24" src="{{asset('/images/commodites_icon/climatisation.png')}}" class="loaded">	
 					</label>
 							
+					
+					<label class="radio-inline"><input type="radio" name="icon" value="1-lit.png">
+					<img width="24" height="24" src="{{asset('/images/commodites_icon/1-lit.png')}}" class="loaded">	
 					</label>
-					<label class="radio-inline"><input type="radio" name="icon" value="lit.png">
-					<img width="24" height="24" src="{{asset('/images/commodites_icon/lit.png')}}" class="loaded">	
+
+				
+					<label class="radio-inline"><input type="radio" name="icon" value="2-lit.png">
+					<img width="24" height="24" src="{{asset('/images/commodites_icon/2-lit.png')}}" class="loaded">	
+					</label>
+
+			
+				</div>
+				<div class="form-group">
+					
+					<label class="radio-inline"><input type="radio" name="icon" value="3-lit.png">
+						<img width="24" height="24" src="{{asset('/images/commodites_icon/3-lit.png')}}" class="loaded">	
+						</label>
+
+					<label class="radio-inline"><input type="radio" name="icon" value="4-lit.png">
+					<img width="24" height="24" src="{{asset('/images/commodites_icon/4-lit.png')}}" class="loaded">	
 					</label>
 
 					</label>
@@ -92,11 +121,10 @@
 					<label class="radio-inline"><input type="radio" name="icon" value="television.png">
 					<img width="24" height="24" src="{{asset('/images/commodites_icon/television.png')}}" class="loaded">	
 					</label>
-
 				</div>
+				
+		
 			</div>
-
-
 				<div class="col-lg-12">
 
 					

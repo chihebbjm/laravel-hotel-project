@@ -1,6 +1,19 @@
-@extends('adminlte.dashboard')
+@extends('admin.layouts.app')
+
+@section('title','Galerie')
+
+@push('css')
+
+@endpush
+
 @section('content')
-	
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+       
+        <!-- Main content -->
+        <div class="content">
+
+
 
 <div class="row" style="padding-top: 10px">
 	<div class="col-md-8">
@@ -14,9 +27,25 @@
 
 <div class="card-body">
 	<div class="card" style="margin-right:40px;margin-left:40px;">
-	<table id="example2" class="table table-bordered"  aria-describedby="example2_info">
+
+		
+		<div class="row" style="margin:10px">
+			<div class="col-md-8">
 	
-		<thead>
+				<div class="pull-left" style="margin-left: 20px">
+					<button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"> 
+						<i class="fa fa-plus" aria-hidden="true">
+							image galerie
+						</i>
+					</button>
+				</div>
+			</div>
+		</div>
+
+
+		<table id="example1" class="table table-bordered table-striped dataTable" role="grid" aria-describedby="example1_info">	
+	
+	
 			<tr>
 			<th>Image</th>
 			<th> No </th>
@@ -24,9 +53,9 @@
 			<th> Tag </th>
 			<th> Action </th>
 		</tr>
-		</thead>
+		<tbody>
 		@foreach($galeries as $key => $img)
-		<tr class="table-light">
+		<tr>
 
 				<td>
 				<img width="100" height="100" src="/images/{{ $img->image }}" class="loaded" alt="icon" >
@@ -45,20 +74,19 @@
 				</td>
 			</tr>
 		@endforeach
+		</tbody>
 	</table>
 
-	<div class="row" style="margin:10px">
-		<div class="col-md-8">
 
-			<div class="pull-left" style="margin-left: 20px">
-				<button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"> 
-					<i class="fa fa-plus" aria-hidden="true">
-						image galerie
-					</i>
-				</button>
-			</div>
+	<div id="pagintion" class="row-pull-right" >
+			<div class="pull-right" style="margin-left: 20px">
+				<div class="pull-right">{{ $galeries->links() }}</div>
+			
 		</div>
 	</div>
+
+
+
 
 
 	</div>
@@ -138,9 +166,13 @@
 
 
 
-
-
-
-  <!-- Edit Modal -->
-
+   
+            
+</div>
+<!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
 @endsection
+
+@push('scripts')
+@endpush

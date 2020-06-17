@@ -53,13 +53,13 @@
 						
 						<li>
 							<label class="text-underline font-light align-top" href="mailto:info.palace.djerba@radissonblu.com" data-test="t-email" data-di-id="di-id-7f18c2c5-1a6ec5aa"><i class="fa fa-envelope-o" aria-hidden="true"></i>
- 								info.palace.djerba@radissonblu.com</label></li>
+ 								info.djerba@radissonblu.com</label></li>
 
 						</li>
 						<li>
 							<label class="color-mako font-light align-top" href="tel:+216 75 75 76 00" data-di-id="di-id-5cb99cd7-95d020b7"><span data-test="t-phone">
 								<i class="fa fa-phone" aria-hidden="true"></i>
-								+216 75 75 76 00</span></label></li>
+								+216 75757600</span></label></li>
 
 						</li>
 					

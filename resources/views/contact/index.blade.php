@@ -1,15 +1,28 @@
-@extends('adminlte.dashboard')
+@extends('admin.layouts.app')
+
+@section('title','Contact')
+
+@push('css')
+
+@endpush
+
 @section('content')
-	
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+       
+        <!-- Main content -->
+        <div class="content">
 
 
-<div class="card-body">
-	<div class="card" style="margin-right:40px;margin-left:40px;">
+
+
+			<div class="card-body">
+				<div class="card" style="margin-right:40px;margin-left:40px;">
 	<table id="example2" class="table table-bordered"  aria-describedby="example2_info">
 	
 
 		
-<tr class="table">
+<tr>
 	
 		<th> No </th>
 		<th> nom </th>
@@ -18,7 +31,7 @@
 
 	</tr>
 	@foreach($contact as $key => $info)
-	<tr class="table-light">
+	<tr>
 			
 			<td> {{ ++$i }} </td>
 			<td> {{ $info->nom }} </td>
@@ -31,14 +44,22 @@
 </table>
 
 
-
-	</div>
+<div id="pagintion" class="row-pull-right" >
+	<div class="pull-right" style="margin-left: 20px">
+		<div class="pull-right">{{ $contact->links() }}</div>
+	
+</div>
 </div>
 
 
 
 
-
-  <!-- Edit Modal -->
-
+   
+            </div>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
 @endsection
+
+@push('scripts')
+@endpush

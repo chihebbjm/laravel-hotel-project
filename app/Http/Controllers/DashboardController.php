@@ -23,6 +23,6 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return redirect()->route('commodites.index');
+        return redirect()->route('chambres.index');
     }
 }

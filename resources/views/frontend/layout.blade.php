@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title></title>
+<title>
+	Radisson hotels
+</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="description" content="" />
 <!-- css -->
@@ -16,7 +18,8 @@
 <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
 <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+	<![endif]-->
+
 </head>
 <body>
 <div id="wrapper">
@@ -24,8 +27,8 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <p class="pull-left hidden-xs"><i class="fa fa-phone"></i> RÉSERVATIONS: +33 182884320 </p>
-        <p class="pull-right"> © 2020 Radisson Hotel Group FAQ </p>
+        <p class="pull-left hidden-xs"><i class="fa fa-phone"></i> RÉSERVATIONS: +216 75757600</p>
+		<p class="pull-right"> lundi au samedi :  8h à 20h </p>
       </div>
     </div>
   </div>
@@ -70,37 +73,41 @@
 
 
 <footer>
+
 	<div class="container">
 		<div class="row">
-		
-			<div class="col-6 col-md-10 col-lg-11 hotel-address d-flex flex-column justify-content-center">
+			<div class="col-md-4 col-sm-4">
+				<div class="widget" style="text-align: left">
+					<h4 class="widgetheading">Nos Contact</h4>
+					<address>
+					<strong style="text-align: left">Plomberie-daniel
+						</strong><br>
+						Houmt Souk, Zone Touristique, Djerba 4128, Tunisie L’établissement Radisson Blu Palace Resort & Thalasso<br></address>
+					<p>
+						<i class="icon-phone"></i> Tel No. 216 75757600 <br>
+						<i class="icon-envelope-alt"></i> info.djerba@radissonblu.com
 
-				<div class="row mb-2">
-					<div class="col d-md-flex align-items-center flex-nowrap" style="margin-left: 30px">
-						<h2 class="h2 text-18 font-bold" itemprop="name" >Radisson Blu Palace Resort &amp; Thalasso Groupe </h2>
-					</div>
+					</p>
 				</div>
 			</div>
-		
-			<div class="col-6 col-md-10 col-lg-11">
-				<div class="row justify-content-md-center">
+		<div class="col-md-4 col-sm-4">
 
-			
-				<div class="col-6 col-lg-6 justify-content-center" >
-						<img  width="200px" height="50px" src="{{ asset('/frontend/img/spo/logo-spo.png')}}" class="user-image" alt="User Image">
-
-					</div>
-				   <div class="col-6 col-lg-6 justify-content-center">
-					<img   width="200px" height="50px" src="{{ asset('/frontend/img/spo/logo-spo2.png')}}" class="user-image" alt="User Image">
-
-					</div>
-				
-					
+		</div>
+			<div class="col-md-4 col-sm-4">
+				<div class="widget" style="text-align: left">
+					<h4 class="widgetheading">Quick Links</h4>
+					<ul class="link-list">
+						<li><a href="https://www.radissonhotelgroup.com/">Radisson Hotel Group</a></li>
+						<li><a href="https://www.radissonhotels.com/en-us/app">Radissoun blu App</a></li>
+						<li><a href="https://www.radissonhotels.com/en-us/privacy">Privacy policy</a></li>
+						<li><a href="https://www.radissonhotels.com/en-us/faq">FAQ</a></li>
+					</ul>
 				</div>
 			</div>
 			
 		</div>
 	</div>
+
 	<div id="sub-footer">
 		<div class="container">
 			<div class="row">
@@ -154,6 +161,7 @@
 	  var button = $(event.relatedTarget)
 	  //data-email in the  button to open modal :
 	  var nom =button.data('nom')
+	  var type =button.data('type')
 	  var description =button.data('description')
 	  var prix =button.data('prix')
 	  var image=button.data('image')
@@ -163,6 +171,7 @@
 	  modal.find('.modal-body #nom').val(nom);
 	  modal.find('.modal-body #description').val(description);
 	  modal.find('.modal-body #prix').val(prix);
+	  modal.find('.modal-body #type').val(type);
 	  modal.find('.modal-body #image').attr("src","images/"+image);
   
   
@@ -188,6 +197,17 @@
 
   
 	})
+	$(document).ready(function() {
+		$('#example2').DataTable({
+			"paging": true,
+			"lengthChange": true,
+			"searching": true,
+			"ordering": true,
+			"info": true,
+			"autoWidth": true,
+			"responsive": true,
+		});
+	} );
   
   </script>
 

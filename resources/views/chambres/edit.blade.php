@@ -1,6 +1,17 @@
-@extends('adminlte.dashboard')
+@extends('admin.layouts.app')
+
+@section('title','Edit Chambre')
+
+@push('css')
+
+@endpush
+
 @section('content')
-	
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+       
+        <!-- Main content -->
+        <div class="content">
 
 
 
@@ -108,11 +119,11 @@
 					<div class="form-group">
 					  <label>Type chambre</label>
 					  <select class="form-control" name="type">
-						<option value="chambre réguliere">Chambre régulière</option>
-						<option value="chambre familiale">Chambre familiale</option>
+						<option value="chambre-reguliere">Chambre régulière</option>
+						<option value="chambre-familiale">Chambre familiale</option>
 						<option value="suite">Suite</option>
-						<option value="chambres communicantes">Chambres communicantes</option>
-						<option value="chambres voisines">Chambres voisines</option>
+						<option value="chambres-communicantes">Chambres communicantes</option>
+						<option value="chambres-voisines">Chambres voisines</option>
 					  </select>
 					</div>
 				  </div>
@@ -135,10 +146,16 @@
 
   
 
-
-
+     
+            
+</div>
+<!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
 @endsection
 
+@push('scripts')
+@endpush
 
 
 

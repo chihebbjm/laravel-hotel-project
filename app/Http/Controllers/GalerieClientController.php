@@ -14,7 +14,7 @@ class GalerieClientController extends Controller
      */
     public function index()
     {
-        $galeries = Galerie::latest()->paginate(5);
+        $galeries = Galerie::get();
         return view('frontend.galeries', compact('galeries'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
 

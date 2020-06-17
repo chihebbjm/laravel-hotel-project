@@ -1,6 +1,20 @@
-@extends('adminlte.dashboard')
+@extends('admin.layouts.app')
+
+@section('title','Commodites')
+
+@push('css')
+
+@endpush
+
 @section('content')
-	
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+       
+        <!-- Main content -->
+        <div class="content">
+
+
+
 
 <div class="row" style="padding-top: 40px">
 	<div class="col-md-8">
@@ -16,11 +30,28 @@
 
 <div class="card-body">
 	<div class="card" style="margin-right:40px;margin-left:40px;">
+
+		<div class="row" style="margin:10px">
+			<div class="col-md-8">
+	
+				<div class="pull-left" style="margin-left: 20px">
+	
+					<button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+						
+						<i class="fa fa-plus" aria-hidden="true">
+						Commodites
+					</i>
+				</button>
+				</div>
+			</div>
+		</div>
+	
+	
 	<table id="example2" class="table table-bordered"  aria-describedby="example2_info">
 	
 
 		
-<tr class="table">
+<tr>
 		<th>Icon</th>
 		<th> No </th>
 		<th> nom </th>
@@ -28,7 +59,7 @@
 		<th> action </th>
 	</tr>
 	@foreach($commodites as $key => $commodite)
-	<tr class="table-light">
+	<tr >
 			<td>
 				<img width="24" height="24" src="/images/commodites_icon/{{ $commodite->icon }}" class="loaded" alt="icon" >
 			</td>
@@ -47,27 +78,17 @@
 		</tr>
 	@endforeach
 </table>
-
-
-
-
-	<div class="row" style="margin:10px">
-		<div class="col-md-8">
-
-			<div class="pull-left" style="margin-left: 20px">
-
-				<button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-					
-					<i class="fa fa-plus" aria-hidden="true">
-					Commodites
-				</i>
-			</button>
-			</div>
-		</div>
-	</div>
-
-	</div>
+<div id="pagintion" class="row-pull-right" >
+	<div class="pull-right" style="margin-left: 20px">
+		<div class="pull-right">{{ $commodites->links() }}</div>
+	
 </div>
+</div>
+
+
+
+
+
 
 
 
@@ -134,9 +155,26 @@
 							<img width="24" height="24" src="{{asset('/images/commodites_icon/climatisation.png')}}" class="loaded">	
 							</label>
 									
+							
+							<label class="radio-inline"><input type="radio" name="icon" value="1-lit.png">
+							<img width="24" height="24" src="{{asset('/images/commodites_icon/1-lit.png')}}" class="loaded">	
 							</label>
-							<label class="radio-inline"><input type="radio" name="icon" value="lit.png">
-							<img width="24" height="24" src="{{asset('/images/commodites_icon/lit.png')}}" class="loaded">	
+
+						
+							<label class="radio-inline"><input type="radio" name="icon" value="2-lit.png">
+							<img width="24" height="24" src="{{asset('/images/commodites_icon/2-lit.png')}}" class="loaded">	
+							</label>
+
+					
+						</div>
+						<div class="form-group">
+							
+							<label class="radio-inline"><input type="radio" name="icon" value="3-lit.png">
+								<img width="24" height="24" src="{{asset('/images/commodites_icon/3-lit.png')}}" class="loaded">	
+								</label>
+
+							<label class="radio-inline"><input type="radio" name="icon" value="4-lit.png">
+							<img width="24" height="24" src="{{asset('/images/commodites_icon/4-lit.png')}}" class="loaded">	
 							</label>
 
 							</label>
@@ -153,10 +191,10 @@
 							<label class="radio-inline"><input type="radio" name="icon" value="television.png">
 							<img width="24" height="24" src="{{asset('/images/commodites_icon/television.png')}}" class="loaded">	
 							</label>
-
 						</div>
+						
+				
 					</div>
-
 					<div class="col-lg-12">
 						
 						<button type="submit" class="btn btn-primary">Submit</button>
@@ -173,8 +211,15 @@
   </div>
 
 
+</div>
+</div>
 
 
-  <!-- Edit Modal -->
+ 
 
+
+    <!-- /.content-wrapper -->
 @endsection
+
+@push('scripts')
+@endpush

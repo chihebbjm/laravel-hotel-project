@@ -185,6 +185,20 @@ desired effect
         <!-- Optionally, you can add icons to the links -->
         
 
+
+        <li class="treeview">
+          <a href="#"><i class="fa fa-home" ></i> <span>Gérer les chambres</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{ url('/chambres') }}">List chambres</a></li>
+          </ul>
+        </li>
+
+
+        
         <li class="treeview">
           <a href="#"><i class="fa fa-plug"></i> <span>Gérer les commodités</span>
             <span class="pull-right-container">
@@ -197,17 +211,7 @@ desired effect
         </li>
 
         
-        <li class="treeview">
-          <a href="#"><i class="fa fa-home" ></i> <span>Gérer les chambres</span>
-            <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-              </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="{{ url('/chambres') }}">List chambres</a></li>
-          </ul>
-        </li>
-
+     
     
         <li class="treeview">
           <a href="#"><i class="fa fa-sliders"></i> <span>Gérer les slider</span>
