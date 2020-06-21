@@ -150,6 +150,15 @@
 					  	</div>
 					</div>
 
+					<div class="col-lg-12" style="margin-bottom: 20px">
+						<div class="form-group">
+							<strong>Image Preview:</strong>
+							<div class="card">
+							<div class="row"  id="preview_img">
+							</div>
+						</div>
+					</div>
+
 				
 					<div class="col-md-12">
 						

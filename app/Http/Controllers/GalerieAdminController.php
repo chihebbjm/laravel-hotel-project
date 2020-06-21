@@ -28,7 +28,7 @@ class GalerieAdminController extends Controller
      */
     public function index()
     {
-        $galeries = Galerie::paginate(5);
+        $galeries = Galerie::orderBy('created_at','desc')->paginate(5);
         return view('galerie.index', compact('galeries'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
 

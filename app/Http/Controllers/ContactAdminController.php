@@ -27,7 +27,7 @@ class ContactAdminController extends Controller
      */
     public function index()
     {
-        $contact = Contact::paginate(5);
+        $contact = Contact::orderBy('created_at','desc')->paginate(5);
         return view('contact.index', compact('contact'))->with('i', (request()->input('page', 1) - 1) * 5);
     
     }

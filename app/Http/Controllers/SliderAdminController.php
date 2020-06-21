@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Slider;
 use Illuminate\Http\Request;
 
-class SliderController extends Controller
+class SliderAdminController extends Controller
 {
     
       /**
@@ -27,7 +27,7 @@ class SliderController extends Controller
      */
     public function index()
     {
-        $sliders = Slider::paginate(5);
+        $sliders = Slider::orderBy('created_at','desc')->paginate(5);
         return view('slider.index', compact('sliders'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
 

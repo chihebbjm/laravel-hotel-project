@@ -32,7 +32,7 @@ Route::resource('commodites', 'CommoditesController');
 
 
 
-Route::resource('slider', 'SliderController');
+Route::resource('slider', 'SliderAdminController');
 
 
 Route::resource('chambres', 'ChambresAdminController');

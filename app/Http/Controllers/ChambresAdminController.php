@@ -34,7 +34,7 @@ class ChambresAdminController extends Controller
    public function index()
     {
        $chambres_dispo= Chambres::where('status',"disponible")->paginate(5);
-       $chambres = Chambres::paginate(5);
+       $chambres = Chambres::orderBy('created_at','desc')->paginate(5);
        $commodites = Commodites::paginate(5);
        return view('chambres.index', compact('chambres','commodites','chambres_dispo'))->with('i', (request()->input('page', 1) - 1) * 5);
   

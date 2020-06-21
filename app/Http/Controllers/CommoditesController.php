@@ -28,7 +28,7 @@ class CommoditesController extends Controller
     public function index()
     {
         
-        $commodites = Commodites::paginate(5);
+        $commodites = Commodites::orderBy('created_at','desc')->paginate(5);
         return view('commodites.index', compact('commodites'))->with('i', (request()->input('page', 1) - 1) * 5);
     
     }

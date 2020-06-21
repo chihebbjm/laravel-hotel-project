@@ -67,7 +67,7 @@
 				<img width="100" height="100" src="/images/{{ $chambre->image }}" class="loaded" alt="icon" >
 			</td>
 			<td style="text-align: center; vertical-align: middle;" > 
-				
+				{{ ++$i }}
 			</td>
 			<td style="vertical-align: middle;width: 50px" > 
 				@if($chambre->status =='disponible')         
@@ -260,6 +260,14 @@
 					</div>
 
 
+					<div class="col-lg-12" style="margin-bottom: 20px">
+						<div class="form-group">
+							<strong>Image Preview:</strong>
+							<div class="card">
+							<div class="row"  id="preview_img">
+							</div>
+						</div>
+					</div>
 					
 
 					<div class="col-lg-12">

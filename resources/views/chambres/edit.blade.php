@@ -78,12 +78,6 @@
 			</div>
 
 
-			<div class="col-md-8" style="margin-bottom: 20px">
-				<div class="form-group">
-					<label style="margin-bottom: 20px">Select Image</label>
-					<input type="file" name="image" />
-				</div>
-			</div>
 
 
 			<div class="col-md-12" style="margin-bottom: 20px">
@@ -128,6 +122,25 @@
 					</div>
 				  </div>
 
+				  <div class="col-lg-12" >
+				  <label>Uploud Image</label>
+				  </div>
+
+				  <div class="col-lg-12" style="margin-bottom: 20px;margin-left:10px">
+					<div class="form-group">
+						<label class="custom-file-label" for="customFile" style="margin-bottom: 20px">Select Image</label>
+						<input type="file" class="custom-file-input" id="customFile" name="image" />
+					</div>
+				</div>
+
+				  <div class="col-lg-12" style="margin-bottom: 20px;margin-left:10px">
+					<div class="form-group">
+						<strong>Image Preview:</strong>
+						<div class="card">
+						<div class="row"  id="preview_img">
+						</div>
+					</div>
+				</div>
 
 
 

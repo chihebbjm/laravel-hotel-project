@@ -137,6 +137,14 @@
 					  	</div>
 					</div>
 
+					<div class="col-lg-12" style="margin-bottom: 20px">
+						<div class="form-group">
+							<strong>Image Preview:</strong>
+							<div class="card">
+							<div class="row"  id="preview_img">
+							</div>
+						</div>
+					</div>
 
 					<div class="col-lg-12">
 						
@@ -154,76 +162,6 @@
 
 
 
-
-  
-	<!-- Modal -->
-<div class="modal fade" id="editmodel" tabindex="-1" role="dialog" aria-labelledby="editmodel" aria-hidden="true">
-	<div class="modal-dialog" role="document">
-	  <div class="modal-content">
-		<div class="modal-header">
-		  <h5 class="modal-title" id="exampleModalLabel">
-			  <h3> Add New Product </h3>
-			</h5>
-		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-			<span aria-hidden="true">&times;</span>
-		  </button>
-		</div>
-		<div class="modal-body">
-		  
-		
-			@if($errors->any())
-				<div class="alert alert-danger">
-					<strong>Oopps! </strong> Something went wrong.
-					<ul>
-						@foreach($errors->all() as $error)
-							<li> {{ $error }} </li>
-						@endforeach
-					</ul>
-				</div>
-			@endif
-		
-			<form action="{{ route('slider.store') }}" method="POST" enctype="multipart/form-data" >
-				@csrf
-				<div class="row">
-					<div class="col-lg-12" style="margin-bottom: 20px">
-						<div class="form-group">
-							<strong>Titre:</strong>
-							<input type="text" name="titre" class="form-control" placeholder="titre">
-						</div>
-					</div>
-		
-					<div class="col-lg-12" style="margin-bottom: 20px">
-						<div class="form-group">
-							<strong>Description:</strong>
-							<textarea name="description" placeholder="description" class="form-control"></textarea>
-						</div>
-					</div>
-		
-					<div class="col-md-8" style="margin-bottom: 20px">
-						<div class="form-group">
-							<label style="margin-bottom: 20px">Select Image</label>
-							<input type="file" name="image" />
-						</div>
-					</div>
-					<div class="col-lg-12">
-						
-						<button type="submit" class="btn btn-primary">Submit</button>
-					</div>
-				</div>
-			</form>
-
-
-
-	  </div>
-	</div>
-  </div>
-
-
-
-       
-            
-</div>
-<!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
 @endsection
