@@ -105,6 +105,16 @@
      
     </script>
 
+
+
+
+<script>
+    function confimeDelete() {
+        if(!confirm("êtes-vous sûr de supprimer !"))
+        event.preventDefault();
+    }
+</script>
+
   
         @stack('scripts')
 </body>

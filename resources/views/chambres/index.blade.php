@@ -114,7 +114,7 @@
 					<a class="btn btn-primary" href="{{ route('chambres.edit', $chambre->id) }}">Edit</a>
 					@csrf
 					@method('DELETE')
-					<button type="submit" class="btn btn-danger">Delete</button>
+					<button type="submit" onclick="return confimeDelete();"  class="btn btn-danger">Delete</button>
 				</form>
  
 				<form  action="{{route('chambredep',$chambre->id)}}" method="GET" >

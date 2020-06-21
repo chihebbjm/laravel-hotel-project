@@ -69,7 +69,7 @@
 						<a class="btn btn-primary" href="{{ route('galerie.edit', $img->id) }}">Edit</a>
 						@csrf
 						@method('DELETE')
-						<button type="submit" class="btn btn-danger">Delete</button>
+						<button type="submit"  onclick="return confimeDelete();" class="btn btn-danger">Delete</button>
 					</form>
 				</td>
 			</tr>

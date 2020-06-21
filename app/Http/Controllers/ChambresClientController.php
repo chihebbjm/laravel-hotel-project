@@ -16,6 +16,7 @@ class ChambresClientController extends Controller
     
     public function index()
     {
+        
        $chambres_dispo= Chambres::where('status',"disponible")->get();
        $chambres = Chambres::get();
        $commodites = Commodites::get();

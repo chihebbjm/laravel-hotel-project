@@ -377,7 +377,19 @@
         
     </div>
 
+    <div class="container" style="margin-bottom: 40px;margin-top:40px">
+        <div class="row mb-5">
+            <div class="col-md-12">
 
+                @foreach ($publicite as $pub)
+                <div class="col" id="commodite-lien">
+                        <img width="250px" height="80px" src="/images/pub/{{ $pub->image }}" class="loaded">
+                </div>
+                
+                @endforeach	
+        </div>
+    </div>
+    </div>
 
     <div class="about home-about">
         <div class="container">

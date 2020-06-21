@@ -50,6 +50,7 @@ Route::get('/galeries','GalerieClientController@index')->name('galeries');
 
 
 
+Route::resource('publicite', 'PubliciteAdminController');
 
 //contact for admin (ContactAdminController) ==> auth
 Route::get('/contact-admin', 'ContactAdminController@index')->name('contact-admin');

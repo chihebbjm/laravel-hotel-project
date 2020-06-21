@@ -63,7 +63,15 @@
                     </a>
                 </li>
 
-
+                <li class="nav-item">
+                    <a href="{{ url('/publicite')}}" class="nav-link">
+                        <i class="fas fa-ad nav-icon"></i>
+                        <p>
+                            Gérer Publicites
+                        </p>
+                    </a>
+                </li>
+                
               </ul>
         </nav>
         <!-- /.sidebar-menu -->
