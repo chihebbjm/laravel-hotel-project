@@ -145,6 +145,12 @@
 							<input type="text" name="proprietaire" class="form-control" placeholder="proprietaire">
 						</div>
 					</div>
+					<div class="col-lg-12" style="margin-bottom: 20px">
+						<div class="form-group">
+							<label>Lien:</label>
+							<input type="text" name="link" class="form-control" placeholder="proprietaire">
+						</div>
+					</div>
 					
 					<div class="col-md-12" style="margin-bottom: 20px">
 						<div class="custom-file">

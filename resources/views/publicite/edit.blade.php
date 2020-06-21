@@ -72,6 +72,16 @@
 					</div>
 				</div>
 			</div>
+
+			<div class="row" style="padding:15px">
+				<div class="col-md-12">
+					<div class="form-group">
+						<strong>Lien:</strong>
+						<input type="text" name="link" value="{{ $publicite->link }}" class="form-control" placeholder="Proprietaire">
+					</div>
+				</div>
+			</div>
+	
 	
 		
 			<div class="row" style="padding:15px">

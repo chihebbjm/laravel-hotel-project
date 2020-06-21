@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 class CreatePubliciteTable extends Migration
 {
-    /**
+   /**
      * Run the migrations.
      *
      * @return void
@@ -18,6 +18,7 @@ class CreatePubliciteTable extends Migration
             $table->string('titre');
             $table->text('proprietaire');
             $table->text('image');
+            $table->text('link');
             $table->timestamps();
         });
     }
@@ -31,4 +32,5 @@ class CreatePubliciteTable extends Migration
     {
         Schema::dropIfExists('publicite');
     }
+    
 }

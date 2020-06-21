@@ -395,7 +395,9 @@
 
                 @foreach ($publicite as $pub)
                 <div> 
-                    <img src="/images/pub/{{ $pub->image }}" width="970px" height="250px" class="fill">
+                <a href="{{$pub->link}}" target="_blank">
+                    <img src="/images/pub/{{ $pub->image }}"  class="fill">
+                </a>
                 </div>
                 @endforeach	
 

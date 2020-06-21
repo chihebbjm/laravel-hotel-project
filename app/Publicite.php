@@ -8,5 +8,5 @@ class publicite extends Model
 {
     protected $table = 'publicite';
 
-    protected $fillable = ['titre', 'proprietaire','image'];
+    protected $fillable = ['titre', 'proprietaire','image','link'];
 }

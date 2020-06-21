@@ -51,6 +51,7 @@ class PubliciteAdminController extends Controller
         $request->validate([
             'titre' => 'required',
             'proprietaire' => 'required',
+            'link' => 'required',
             'image' =>'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
           
         ]);
@@ -63,6 +64,7 @@ class PubliciteAdminController extends Controller
         //NEW
         $publicite=new Publicite();
         $publicite->titre=$request->titre;
+        $publicite->link=$request->link;
         $publicite->proprietaire=$request->proprietaire;
         $publicite->image=$new_name;
         $publicite->save();
@@ -116,6 +118,7 @@ class PubliciteAdminController extends Controller
         {
         $request->validate([
             'titre' => 'required',
+            'link' => 'required',
             'proprietaire' => 'required',
             'image' =>'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
@@ -128,6 +131,7 @@ class PubliciteAdminController extends Controller
         {
             $request->validate([
                 'titre' => 'required',
+                'link' => 'required',
                 'proprietaire' => 'required'
                 
             ]);
@@ -137,6 +141,7 @@ class PubliciteAdminController extends Controller
 
         //UPDATE :
         $publicite->titre=$request->titre;
+        $publicite->link=$request->link;
         $publicite->proprietaire=$request->proprietaire;
         $publicite->image=$image_name;
         $publicite->update();
