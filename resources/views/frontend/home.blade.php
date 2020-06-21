@@ -24,7 +24,7 @@
               <li>
                 <div id="container" style="filter: blur(2px);">
                     <div style="background: #86abf0;">
-                        <img src="/images/{{ $image_slider->image }}" alt="Image" width="100%" height="800px"/>
+                        <img src="/images/{{ $image_slider->image }}" alt="Image" width="100%" height="700px"/>
                     </div>
                         
                     </div>
@@ -58,7 +58,6 @@
                             <div class="col-md-12">
                                 <div class="about-logo">
                                     <h3 id="title-home" style="text-align: center">Radisson Blu
-                                        <div class="lien"  style="text-align: center"><img src="frontend/img/home-icon/lien.svg" width="150px" height="40px"> </div>
 
                                     </h3>
                                     
@@ -93,42 +92,56 @@
             <div class="col-md-12">
                 <div class="about-logo">
                     <h3 id="title-home" style="text-align: center">Nos Services
-                        <div class="lien"  style="text-align: center"><img src="frontend/img/home-icon/lien.svg" width="150px" height="40px"> </div>
                     </h3>
                 </div>  
             </div>
-            <div class="col-lg-4">
+        </div>
+        <div class="row no-gutters mb-2 slick-mobile-cards slick-same-height" >
+
+            <div class="col-md-3">
                     <div class="card card__featured-icon text-center no-border mb-lg-3">
 
-                        <img src="/frontend/img/home-icon/offer.png">
-
+                        <img  src="frontend/img/home-icon/coffee-service.png">                        
                         <div class="card__body">
-                            <h3 class="h3 card__title">Remises exclusives pour les membres</h3>
+                            <h3 class="h3 card__title">Café et thé offerts</h3>
                         </div>
                     </div>
                 </div>
-            <div class="col-lg-4">
+            <div class="col-md-3">
                     <div class="card card__featured-icon text-center  mb-lg-3">
 
-                        <img src="/frontend/img/home-icon/gift.png">
+                        <img  src="frontend/img/home-icon/lit-service.png">                        
 
                         <div class="card__body">
-                            <h3 class="h3 card__title">Cadeau de bienvenue premium</h3>
+                            <h3 class="h3 card__title">Lits d’enfants disponibles</h3>
                         </div>
                     </div>
                 </div>
-            <div class="col-lg-4">
-                    <div class="card card__featured-icon text-center  mb-lg-3">
+         
+           
 
-                        <img src="/frontend/img/home-icon/bed.png">
+         
+            <div class="col-md-3">
+                <div class="card card__featured-icon text-center  mb-lg-3">
 
-                        <div class="card__body">
-                            <h3 class="h3 card__title">Gagner des nuits d’hôtel gratuites</h3>
-                        </div>
+                    <img  src="frontend/img/home-icon/feetness-service.png">                        
+
+                    <div class="card__body">
+                        <h3 class="h3 card__title">Centre de fitness</h3>
                     </div>
                 </div>
             </div>
+            <div class="col-md-3">
+                <div class="card card__featured-icon text-center  mb-lg-3">
 
+                    <img  src="frontend/img/home-icon/wifi-service.png">                        
+
+                    <div class="card__body">
+                        <h3 class="h3 card__title">Wi-Fi gratuit</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </div>
 
@@ -143,7 +156,6 @@
                                 <div class="col-md-12">
                                     <div class="about-logo">
                                         <h3 id="title-home" style="text-align: center">Nos Chambres
-                                            <div class="lien"  style="text-align: center"><img src="frontend/img/home-icon/lien.svg" width="150px" height="40px"> </div>
     
                                         </h3>
                                         
@@ -377,16 +389,16 @@
         
     </div>
 
-    <div class="container" style="margin-bottom: 40px;margin-top:40px">
+    <div class="container" style="margin-bottom: 40px;margin-top:80px">
         <div class="row mb-5">
             <div class="col-md-12">
 
                 @foreach ($publicite as $pub)
-                <div class="col" id="commodite-lien">
-                        <img width="250px" height="80px" src="/images/pub/{{ $pub->image }}" class="loaded">
+                <div> 
+                    <img src="/images/pub/{{ $pub->image }}" width="970px" height="250px" class="fill">
                 </div>
-                
                 @endforeach	
+
         </div>
     </div>
     </div>
@@ -398,7 +410,6 @@
                     
                     <center> 
                         <h3 id="title-home" style="text-align: center">Merci Pour Votre feedback
-                        <div class="lien"  style="text-align: center"><img src="frontend/img/home-icon/lien.svg" width="150px" height="40px"> </div>
                    </h3></center>	
                     
                     <div class="col-md-6" style="margin-top: 20px;">
